@@ -230,6 +230,46 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("bashed", "battered", "bludgeoned", "thrashed", "whacked")
 
+/obj/item/kitchen/rollingpin/attack(mob/living/target as mob, mob/living/carbon/human/user) // do i need the as mob here for dead logic lmfao
+	if(istype(user) && user.age > 60)
+		force += 5
+	return ..()
+/obj/item/kitchen/rollingpin/reinforced
+	name = "reinforced rolling pin"
+	desc = "TODO"
+	icon_state = "rolling_pin"
+	force = 25
+	throwforce = 15
+	throw_speed = 3
+	throw_range = 7
+	w_class = WEIGHT_CLASS_NORMAL
+	attack_verb = list("walloped", "disciplined", "bludgeoned", "thrashed", "whacked")
+
+/obj/item/kitchen/rollingpin/reinforced/attack(mob/living/target, mob/living/carbon/human/user)
+	. = ..()
+
+	if(!istype(user) || !ishuman(target))
+		return
+
+	var/mob/living/carbon/human/H = target
+
+	if(user.zone_selected == BODY_ZONE_HEAD)
+		H.Confused(6 SECONDS)
+		H.adjustBrainLoss(10)
+		H.visible_message("<span class='danger'>[user] cracks [H] over the head with [src]!</span>", \
+						"<span class='userdanger'>[user] cracks you over the head with [src]!</span>", \
+						"<span class='italics'>You hear a resounding crack.</span>")
+		playsound(loc, 'sound/effects/snap.ogg', 70, TRUE, -1)
+
+	else if(user.zone_selected == BODY_ZONE_L_ARM || user.zone_selected == BODY_ZONE_R_ARM || user.zone_selected == BODY_ZONE_PRECISE_L_HAND || user.zone_selected == BODY_ZONE_R_HAND)
+		var/obj/item/I = target.get_active_hand()
+		if(prob(50) && H.unEquip(I))
+			target.drop_item()
+
+	else if(user.zone_selected == BODY_ZONE_L_LEG || user.zone_selected == BODY_ZONE_R_LEG || user.zone_selected == BODY_ZONE_PRECISE_R_FOOT || user.zone_selected == BODY_ZONE_PRECISE_L_FOOT)
+		H.Slowed(3 SECONDS)
+		H.emote("scream")
+
 /* Trays moved to /obj/item/storage/bag */
 
 /*

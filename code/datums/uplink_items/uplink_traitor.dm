@@ -104,6 +104,14 @@
 	cost = 40
 	job = list("Chef")
 
+/datum/uplink_item/jobspecific/rollingpin_reinforced
+	name = "Reinforced Rolling Pin"
+	desc = "TODO"
+	reference = "RRP"
+	item = /obj/item/kitchen/rollingpin/reinforced
+	cost = 40
+	job = list("Chef")
+
 /datum/uplink_item/jobspecific/syndidonk
 	name = "Syndicate Donk Pockets"
 	desc = "A box of highly specialized Donk pockets with a number of regenerative and stimulating chemicals inside of them; the box comes equipped with a self-heating mechanism."
