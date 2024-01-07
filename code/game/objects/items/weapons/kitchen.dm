@@ -233,7 +233,9 @@
 /obj/item/kitchen/rollingpin/attack(mob/living/target as mob, mob/living/carbon/human/user) // do i need the as mob here for dead logic lmfao
 	if(istype(user) && user.age > 60)
 		force += 5
-	return ..()
+		. = ..()
+		force -= 5
+
 /obj/item/kitchen/rollingpin/reinforced
 	name = "reinforced rolling pin"
 	desc = "TODO"
@@ -261,7 +263,7 @@
 						"<span class='italics'>You hear a resounding crack.</span>")
 		playsound(loc, 'sound/effects/snap.ogg', 70, TRUE, -1)
 
-	else if(user.zone_selected == BODY_ZONE_L_ARM || user.zone_selected == BODY_ZONE_R_ARM || user.zone_selected == BODY_ZONE_PRECISE_L_HAND || user.zone_selected == BODY_ZONE_R_HAND)
+	else if(user.zone_selected == BODY_ZONE_L_ARM || user.zone_selected == BODY_ZONE_R_ARM || user.zone_selected == BODY_ZONE_PRECISE_L_HAND || user.zone_selected == BODY_ZONE_PRECISE_R_HAND)
 		var/obj/item/I = target.get_active_hand()
 		if(prob(50) && H.unEquip(I))
 			target.drop_item()
