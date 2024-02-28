@@ -21,7 +21,7 @@
 		if(istype(W,T))
 			can_hang = TRUE
 	if(can_hang && !coat)
-		user.visible_message("[user] hangs [W] on \the [src].", "You hang [W] on the \the [src]")
+		user.visible_message("[user] hangs [W] on [src].", "You hang [W] on the [src]")
 		coat = W
 		user.drop_item(src)
 		coat.forceMove(src)
@@ -35,7 +35,7 @@
 		if(istype(mover,T))
 			can_hang = TRUE
 	if(can_hang && !coat)
-		visible_message("[mover] lands on \the [src].")
+		visible_message("[mover] lands on [src].")
 		coat = mover
 		coat.forceMove(src)
 		update_icon(UPDATE_OVERLAYS)

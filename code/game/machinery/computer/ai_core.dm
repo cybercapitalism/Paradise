@@ -282,10 +282,10 @@
 
 	if(D in GLOB.empty_playable_ai_cores)
 		GLOB.empty_playable_ai_cores -= D
-		to_chat(src, "\The [id] is now <font color=\"#ff0000\">not available</font> for latejoining AIs.")
+		to_chat(src, "[id] is now <font color=\"#ff0000\">not available</font> for latejoining AIs.")
 	else
 		GLOB.empty_playable_ai_cores += D
-		to_chat(src, "\The [id] is now <font color=\"#008000\">available</font> for latejoining AIs.")
+		to_chat(src, "[id] is now <font color=\"#008000\">available</font> for latejoining AIs.")
 
 
 /*

@@ -194,7 +194,7 @@ GLOBAL_LIST_EMPTY(safes)
 			update_icon()
 		else if(I.w_class + space <= maxspace)
 			if(!user.drop_item())
-				to_chat(user, "<span class='warning'>\The [I] is stuck to your hand, you cannot put it in the safe!</span>")
+				to_chat(user, "<span class='warning'>[I] is stuck to your hand, you cannot put it in the safe!</span>")
 				return
 			space += I.w_class
 			I.forceMove(src)

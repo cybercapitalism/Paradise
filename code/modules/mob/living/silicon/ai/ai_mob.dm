@@ -1268,19 +1268,19 @@ GLOBAL_LIST_INIT(ai_verbs_default, list(
 /mob/living/silicon/ai/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/wrench))
 		if(anchored)
-			user.visible_message("<span class='notice'>\The [user] starts to unbolt \the [src] from the plating...</span>")
+			user.visible_message("<span class='notice'>[user] starts to unbolt [src] from the plating...</span>")
 			if(!do_after(user, 40 * W.toolspeed, target = src))
-				user.visible_message("<span class='notice'>\The [user] decides not to unbolt \the [src].</span>")
+				user.visible_message("<span class='notice'>[user] decides not to unbolt [src].</span>")
 				return
-			user.visible_message("<span class='notice'>\The [user] finishes unfastening \the [src]!</span>")
+			user.visible_message("<span class='notice'>[user] finishes unfastening [src]!</span>")
 			anchored = FALSE
 			return
 		else
-			user.visible_message("<span class='notice'>\The [user] starts to bolt \the [src] to the plating...</span>")
+			user.visible_message("<span class='notice'>[user] starts to bolt [src] to the plating...</span>")
 			if(!do_after(user, 40 * W.toolspeed, target = src))
-				user.visible_message("<span class='notice'>\The [user] decides not to bolt \the [src].</span>")
+				user.visible_message("<span class='notice'>[user] decides not to bolt [src].</span>")
 				return
-			user.visible_message("<span class='notice'>\The [user] finishes fastening down \the [src]!</span>")
+			user.visible_message("<span class='notice'>[user] finishes fastening down [src]!</span>")
 			anchored = TRUE
 			return
 	else
@@ -1443,12 +1443,12 @@ GLOBAL_LIST_INIT(ai_verbs_default, list(
 				A = D
 
 		if(istype(A))
-			switch(tgui_alert(src, "Do you want to open \the [A] for [target]?", "Doorknob_v2a.exe", list("Yes", "No")))
+			switch(tgui_alert(src, "Do you want to open [A] for [target]?", "Doorknob_v2a.exe", list("Yes", "No")))
 				if("Yes")
 					if(!A.density)
 						to_chat(src, "<span class='notice'>[A] was already opened.</span>")
 					else if(A.open_close(src))
-						to_chat(src, "<span class='notice'>You open \the [A] for [target].</span>")
+						to_chat(src, "<span class='notice'>You open [A] for [target].</span>")
 				else
 					to_chat(src, "<span class='warning'>You deny the request.</span>")
 		else

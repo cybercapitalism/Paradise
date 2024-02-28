@@ -36,7 +36,7 @@
 		to_chat(user, "<span class='warning'>[src] attempts to create a portal, but abruptly shuts off.</span>")
 		return
 	if(!current_location||!is_teleport_allowed(current_location.z))//If turf was not found or they're somewhere teleproof
-		to_chat(user, "<span class='notice'>\The [src] is malfunctioning.</span>")
+		to_chat(user, "<span class='notice'>[src] is malfunctioning.</span>")
 		return
 	var/list/L = list(  )
 	for(var/obj/machinery/computer/teleporter/com in GLOB.machines)
@@ -62,7 +62,7 @@
 	if(!t1 || (!user.is_in_active_hand(src) || user.stat || user.restrained()))
 		return
 	if(active_portals >= 3)
-		user.show_message("<span class='notice'>\The [src] is recharging!</span>")
+		user.show_message("<span class='notice'>[src] is recharging!</span>")
 		return
 	var/T = L[t1]
 	user.show_message("<span class='notice'>Locked In.</span>", 2)

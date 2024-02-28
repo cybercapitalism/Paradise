@@ -100,7 +100,7 @@
 				return
 			var/confirm = tgui_alert(user, "Are you sure you want to wipe this card's memory? This cannot be undone once started.", "Confirm Wipe", list("Yes", "No"))
 			if(confirm == "Yes" && (ui_status(user, GLOB.inventory_state) == UI_INTERACTIVE)) // And make doubly sure they want to wipe (three total clicks)
-				msg_admin_attack("[key_name_admin(user)] wiped [key_name_admin(AI)] with \the [src].", ATKLOG_FEW)
+				msg_admin_attack("[key_name_admin(user)] wiped [key_name_admin(AI)] with [src].", ATKLOG_FEW)
 				add_attack_logs(user, AI, "Wiped with [src].")
 				INVOKE_ASYNC(src, PROC_REF(wipe_ai))
 

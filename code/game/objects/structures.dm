@@ -103,7 +103,7 @@
 			return //No spamming this on people.
 
 		M.Weaken(10 SECONDS)
-		to_chat(M, "<span class='warning'>You topple as \the [src] moves under you!</span>")
+		to_chat(M, "<span class='warning'>You topple as [src] moves under you!</span>")
 
 		if(prob(25))
 

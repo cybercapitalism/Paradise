@@ -50,7 +50,7 @@ GLOBAL_LIST_EMPTY(gas_sensors)
 	if(!I.use_tool(src, user, 40, volume = I.tool_volume))
 		return
 
-	user.visible_message("[user] unfastens \the [src].", "<span class='notice'>You have unfastened \the [src].</span>", "You hear ratchet.")
+	user.visible_message("[user] unfastens [src].", "<span class='notice'>You have unfastened [src].</span>", "You hear ratchet.")
 	new /obj/item/pipe_gsensor(loc)
 	qdel(src)
 	playsound(src, 'sound/items/deconstruct.ogg', 50, 1)

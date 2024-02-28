@@ -285,8 +285,8 @@
 				if(!files.CanAddDesign2Known(design))
 					to_chat(user, "<span class='warning'>This design is not compatible with the autolathe.</span>")
 					return 1
-				user.visible_message("[user] begins to load \the [O] in \the [src]...",
-					"You begin to load a design from \the [O]...",
+				user.visible_message("[user] begins to load [O] in [src]...",
+					"You begin to load a design from [O]...",
 					"You hear the chatter of a floppy drive.")
 				playsound(get_turf(src), 'sound/goonstation/machines/printer_dotmatrix.ogg', 50, 1)
 				busy = TRUE
@@ -478,7 +478,7 @@
 			being_built = new /list()
 			return 0
 		if(!can_build(D, multiplier))
-			visible_message("[bicon(src)] <b>\The [src]</b> beeps, \"Not enough resources. Queue processing terminated.\"")
+			visible_message("[bicon(src)] <b>[src]</b> beeps, \"Not enough resources. Queue processing terminated.\"")
 			queue = list()
 			being_built = new /list()
 			return 0

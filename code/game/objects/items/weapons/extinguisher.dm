@@ -70,18 +70,18 @@
 	var/old_safety = safety
 	safety = TRUE
 	if(reagents.total_volume == reagents.maximum_volume)
-		to_chat(user, "<span class='notice'>\The [src] is already full!</span>")
+		to_chat(user, "<span class='notice'>[src] is already full!</span>")
 		safety = old_safety
 		return TRUE
 	var/obj/structure/reagent_dispensers/watertank/W = target
 	var/transferred = W.reagents.trans_to(src, max_water)
 	if(transferred > 0)
-		to_chat(user, "<span class='notice'>\The [src] has been refilled by [transferred] units.</span>")
+		to_chat(user, "<span class='notice'>[src] has been refilled by [transferred] units.</span>")
 		playsound(loc, 'sound/effects/refill.ogg', 50, TRUE, -6)
 		for(var/datum/reagent/water/R in reagents.reagent_list)
 			R.cooling_temperature = cooling_power
 	else
-		to_chat(user, "<span class='notice'>\The [W] is empty!</span>")
+		to_chat(user, "<span class='notice'>[W] is empty!</span>")
 	safety = old_safety
 	return TRUE
 

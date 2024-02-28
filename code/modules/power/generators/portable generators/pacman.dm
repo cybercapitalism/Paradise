@@ -80,12 +80,12 @@
 
 /obj/machinery/power/port_gen/pacman/examine(mob/user)
 	. = ..()
-	. += "\The [src] appears to be producing [power_gen*power_output] W."
+	. += "[src] appears to be producing [power_gen*power_output] W."
 	. += "There [sheets == 1 ? "is" : "are"] [sheets] sheet\s left in the hopper."
 	if(is_broken())
-		. += "<span class='warning'>\The [src] seems to have broken down.</span>"
+		. += "<span class='warning'>[src] seems to have broken down.</span>"
 	if(overheating)
-		. += "<span class='danger'>\The [src] is overheating!</span>"
+		. += "<span class='danger'>[src] is overheating!</span>"
 
 /obj/machinery/power/port_gen/pacman/has_fuel()
 	var/needed_sheets = power_output / time_per_sheet

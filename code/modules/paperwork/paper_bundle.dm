@@ -63,7 +63,7 @@
 			src.amount++
 			if(screen == 2)
 				screen = 1
-		to_chat(user, "<span class='notice'>You add \the [W.name] to [(src.name == "paper bundle") ? "the paper bundle" : src.name].</span>")
+		to_chat(user, "<span class='notice'>You add [W.name] to [(src.name == "paper bundle") ? "the paper bundle" : src.name].</span>")
 		qdel(W)
 	else
 		if(is_pen(W) || istype(W, /obj/item/toy/crayon))

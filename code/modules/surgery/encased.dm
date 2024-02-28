@@ -19,8 +19,8 @@
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 
 	user.visible_message(
-		"[user] begins to cut through [target]'s [affected.encased] with \the [tool].",
-		"You begin to cut through [target]'s [affected.encased] with \the [tool]."
+		"[user] begins to cut through [target]'s [affected.encased] with [tool].",
+		"You begin to cut through [target]'s [affected.encased] with [tool]."
 	)
 	affected.custom_pain("Something hurts horribly in your [affected.name]!")
 	return ..()
@@ -29,8 +29,8 @@
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 
 	user.visible_message(
-		"<span class='notice'> [user] has cut [target]'s [affected.encased] open with \the [tool].</span>",
-		"<span class='notice'> You have cut [target]'s [affected.encased] open with \the [tool].</span>"
+		"<span class='notice'> [user] has cut [target]'s [affected.encased] open with [tool].</span>",
+		"<span class='notice'> You have cut [target]'s [affected.encased] open with [tool].</span>"
 	)
 	affected.open = ORGAN_ORGANIC_ENCASED_OPEN
 	affected.fracture(silent = TRUE)
@@ -40,8 +40,8 @@
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 
 	user.visible_message(
-		"<span class='warning'> [user]'s hand slips, cracking [target]'s [affected.encased] with \the [tool]!</span>" ,
-		"<span class='warning'> Your hand slips, cracking [target]'s [affected.encased] with \the [tool]!</span>"
+		"<span class='warning'> [user]'s hand slips, cracking [target]'s [affected.encased] with [tool]!</span>" ,
+		"<span class='warning'> Your hand slips, cracking [target]'s [affected.encased] with [tool]!</span>"
 	)
 
 	affected.receive_damage(20)
@@ -64,8 +64,8 @@
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 
 	user.visible_message(
-		"[user] starts to force open the [affected.encased] in [target]'s [affected.name] with \the [tool].",
-		"You start to force open the [affected.encased] in [target]'s [affected.name] with \the [tool]."
+		"[user] starts to force open the [affected.encased] in [target]'s [affected.name] with [tool].",
+		"You start to force open the [affected.encased] in [target]'s [affected.name] with [tool]."
 	)
 	affected.custom_pain("Something hurts horribly in your [affected.name]!")
 	return ..()
@@ -75,8 +75,8 @@
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 
 	user.visible_message(
-		"<span class='notice'> [user] forces open [target]'s [affected.encased] with \the [tool].</span>",
-		"<span class='notice'> You force open [target]'s [affected.encased] with \the [tool].</span>"
+		"<span class='notice'> [user] forces open [target]'s [affected.encased] with [tool].</span>",
+		"<span class='notice'> You force open [target]'s [affected.encased] with [tool].</span>"
 	)
 
 	affected.open = ORGAN_ORGANIC_ENCASED_OPEN
@@ -110,8 +110,8 @@
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 
 	user.visible_message(
-		"[user] starts bending [target]'s [affected.encased] back into place with \the [tool].",
-		"You start bending [target]'s [affected.encased] back into place with \the [tool]."
+		"[user] starts bending [target]'s [affected.encased] back into place with [tool].",
+		"You start bending [target]'s [affected.encased] back into place with [tool]."
 	)
 	affected.custom_pain("Something hurts horribly in your [affected.name]!")
 	return ..()
@@ -120,8 +120,8 @@
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 
 	user.visible_message(
-		"<span class='notice'>[user] bends [target]'s [affected.encased] back into place with \the [tool].</span>",
-		"<span class='notice'>You bend [target]'s [affected.encased] back into place with \the [tool].</span>"
+		"<span class='notice'>[user] bends [target]'s [affected.encased] back into place with [tool].</span>",
+		"<span class='notice'>You bend [target]'s [affected.encased] back into place with [tool].</span>"
 	)
 
 	return SURGERY_STEP_CONTINUE
@@ -152,8 +152,8 @@
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 
 	user.visible_message(
-		"[user] starts applying \the [tool] to [target]'s [affected.encased].",
-		"You start applying \the [tool] to [target]'s [affected.encased]."
+		"[user] starts applying [tool] to [target]'s [affected.encased].",
+		"You start applying [tool] to [target]'s [affected.encased]."
 	)
 	affected.custom_pain("Something hurts horribly in your [affected.name]!")
 	return ..()
@@ -162,8 +162,8 @@
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 
 	user.visible_message(
-		"<span class='notice'> [user] applied \the [tool] to [target]'s [affected.encased].</span>",
-		"<span class='notice'> You applied \the [tool] to [target]'s [affected.encased].</span>"
+		"<span class='notice'> [user] applied [tool] to [target]'s [affected.encased].</span>",
+		"<span class='notice'> You applied [tool] to [target]'s [affected.encased].</span>"
 	)
 
 	affected.open = ORGAN_ORGANIC_OPEN

@@ -37,7 +37,7 @@
 			tickets += T.amount
 			qdel(T)
 		else
-			to_chat(user, "<span class='warning'>\The [T] seems stuck to your hand!</span>")
+			to_chat(user, "<span class='warning'>[T] seems stuck to your hand!</span>")
 		return
 	if(panel_open)
 		if(istype(O, /obj/item/wrench))

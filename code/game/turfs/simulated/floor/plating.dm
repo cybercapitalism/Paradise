@@ -376,23 +376,23 @@
 		var/smash_prob = max(0, C.force*17 - metal*25) // A crowbar will have a 60% chance of a breakthrough on alum, 35% on iron
 		if(prob(smash_prob))
 			// YAR BE CAUSIN A HULL BREACH
-			visible_message("<span class='danger'>[user] smashes through \the [src] with \the [C]!</span>")
+			visible_message("<span class='danger'>[user] smashes through [src] with [C]!</span>")
 			smash()
 		else
-			visible_message("<span class='warning'>[user]'s [C.name] bounces against \the [src]!</span>")
+			visible_message("<span class='warning'>[user]'s [C.name] bounces against [src]!</span>")
 
 /turf/simulated/floor/plating/metalfoam/attack_animal(mob/living/simple_animal/M)
 	M.do_attack_animation(src)
 	if(M.melee_damage_upper == 0)
-		M.visible_message("<span class='notice'>[M] nudges \the [src].</span>")
+		M.visible_message("<span class='notice'>[M] nudges [src].</span>")
 	else
 		if(M.attack_sound)
 			playsound(loc, M.attack_sound, 50, 1, 1)
-		M.visible_message("<span class='danger'>\The [M] [M.attacktext] [src]!</span>")
+		M.visible_message("<span class='danger'>[M] [M.attacktext] [src]!</span>")
 		smash(src)
 
 /turf/simulated/floor/plating/metalfoam/attack_alien(mob/living/carbon/alien/humanoid/M)
-	M.visible_message("<span class='danger'>[M] tears apart \the [src]!</span>")
+	M.visible_message("<span class='danger'>[M] tears apart [src]!</span>")
 	smash(src)
 
 /turf/simulated/floor/plating/metalfoam/burn_tile()

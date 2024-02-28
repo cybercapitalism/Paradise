@@ -198,13 +198,13 @@
 			return
 
 		if(!user.drop_item())
-			to_chat(user, "<span class='warning'>\The [I] is stuck to you!</span>")
+			to_chat(user, "<span class='warning'>[I] is stuck to you!</span>")
 			return
 
 		beaker = I
 		SStgui.update_uis(src)
 		I.forceMove(src)
-		user.visible_message("[user] adds \a [I] to \the [src]!", "You add \a [I] to \the [src]!")
+		user.visible_message("[user] adds \a [I] to [src]!", "You add \a [I] to [src]!")
 		return
 	if(istype(I, /obj/item/grab))
 		var/obj/item/grab/G = I

@@ -131,7 +131,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		return
 
 	if(scan)
-		to_chat(user, "<span class='notice'>You remove \the [scan] from \the [src].</span>")
+		to_chat(user, "<span class='notice'>You remove [scan] from [src].</span>")
 		if(!user.get_active_hand())
 			user.put_in_hands(scan)
 		else if(!user.put_in_inactive_hand(scan))
@@ -141,7 +141,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		SStgui.update_uis(src)
 		return
 	else if(modify)
-		to_chat(user, "<span class='notice'>You remove \the [modify] from \the [src].</span>")
+		to_chat(user, "<span class='notice'>You remove [modify] from [src].</span>")
 		if(!user.get_active_hand())
 			user.put_in_hands(modify)
 		else if(!user.put_in_inactive_hand(modify))

@@ -121,7 +121,7 @@
 
 /obj/item/reagent_containers/drinks/bottle/proc/SplashReagents(mob/M)
 	if(reagents && reagents.total_volume)
-		M.visible_message("<span class='danger'>The contents of \the [src] splashes all over [M]!</span>")
+		M.visible_message("<span class='danger'>The contents of [src] splashes all over [M]!</span>")
 		reagents.reaction(M, REAGENT_TOUCH)
 		reagents.clear_reagents()
 
@@ -400,6 +400,6 @@
 		if(!is_glass)
 			to_chat(user, "<span class='danger'>The flame's spread too far on it!</span>")
 			return
-		to_chat(user, "<span class='info'>You snuff out the flame on \the [src].</span>")
+		to_chat(user, "<span class='info'>You snuff out the flame on [src].</span>")
 		active = FALSE
 		update_icon(UPDATE_OVERLAYS)

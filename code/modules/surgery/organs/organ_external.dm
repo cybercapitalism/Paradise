@@ -564,20 +564,20 @@ Note that amputating the affected organ does in fact remove the infection from t
 			if(!clean)
 				var/gore_sound = "[is_robotic() ? "tortured metal" : "ripping tendons and flesh"]"
 				owner.visible_message(
-					"<span class='danger'>\The [owner]'s [name] flies off in an arc!</span>",\
+					"<span class='danger'>[owner]'s [name] flies off in an arc!</span>",\
 					"<span class='moderate'><b>Your [name] goes flying off!</b></span>",\
 					"<span class='danger'>You hear a terrible sound of [gore_sound].</span>")
 		if(DROPLIMB_BURN)
 			var/gore = "[is_robotic() ? "" : " of burning flesh"]"
 			owner.visible_message(
-				"<span class='danger'>\The [owner]'s [name] flashes away into ashes!</span>",\
+				"<span class='danger'>[owner]'s [name] flashes away into ashes!</span>",\
 				"<span class='moderate'><b>Your [name] flashes away into ashes!</b></span>",\
 				"<span class='danger'>You hear a crackling sound[gore].</span>")
 		if(DROPLIMB_BLUNT)
 			var/gore = "[is_robotic() ? "": " in shower of gore"]"
 			var/gore_sound = "[is_robotic() ? "rending sound of tortured metal" : "sickening splatter of gore"]"
 			owner.visible_message(
-				"<span class='danger'>\The [owner]'s [name] explodes[gore]!</span>",\
+				"<span class='danger'>[owner]'s [name] explodes[gore]!</span>",\
 				"<span class='moderate'><b>Your [name] explodes[gore]!</b></span>",\
 				"<span class='danger'>You hear the [gore_sound].</span>")
 			disembowel(limb_name)
@@ -689,13 +689,13 @@ Note that amputating the affected organ does in fact remove the infection from t
 		return
 	if(holder.handcuffed && (body_part in list(ARM_LEFT, ARM_RIGHT, HAND_LEFT, HAND_RIGHT)))
 		holder.visible_message(\
-			"\The [holder.handcuffed.name] falls off of [holder.name].",\
-			"\The [holder.handcuffed.name] falls off you.")
+			"[holder.handcuffed.name] falls off of [holder.name].",\
+			"[holder.handcuffed.name] falls off you.")
 		holder.unEquip(holder.handcuffed)
 	if(holder.legcuffed && (body_part in list(FOOT_LEFT, FOOT_RIGHT, LEG_LEFT, LEG_RIGHT)))
 		holder.visible_message(\
-			"\The [holder.legcuffed.name] falls off of [holder.name].",\
-			"\The [holder.legcuffed.name] falls off you.")
+			"[holder.legcuffed.name] falls off of [holder.name].",\
+			"[holder.legcuffed.name] falls off you.")
 		holder.unEquip(holder.legcuffed)
 
 /obj/item/organ/external/proc/fracture(silent = FALSE)
@@ -706,7 +706,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 		return
 	if(owner && !silent)
 		owner.audible_message(
-			"<span class='warning'>You hear a sickening crack coming from \the [owner].</span>",
+			"<span class='warning'>You hear a sickening crack coming from [owner].</span>",
 			"<span class='danger'>[owner]'s [name] appears to buckle unnaturally!</span>"
 		)
 		to_chat(owner, "<span class='userdanger'>Something feels like it shattered in your [name]!</span>")
@@ -863,7 +863,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 	//Robotic limbs explode if sabotaged.
 	if(is_robotic() && sabotaged)
 		victim.visible_message(
-			"<span class='danger'>\The [victim]'s [name] explodes violently!</span>",\
+			"<span class='danger'>[victim]'s [name] explodes violently!</span>",\
 			"<span class='userdanger'>Your [name] explodes!</span>",\
 			"<span class='danger'>You hear an explosion!</span>")
 		explosion(get_turf(owner),-1,-1,2,3)
@@ -874,7 +874,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 	if(status & ORGAN_DISFIGURED)
 		return
 	if(owner)
-		owner.visible_message("<span class='warning'>\The [owner]'s [name] turns into a mangled mess!</span>",	\
+		owner.visible_message("<span class='warning'>[owner]'s [name] turns into a mangled mess!</span>",	\
 							"<span class='userdanger'>Your [name] becomes a mangled mess!</span>",	\
 							"<span class='warning'>You hear a sickening sound.</span>")
 

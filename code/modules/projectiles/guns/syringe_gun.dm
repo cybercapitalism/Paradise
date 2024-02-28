@@ -172,7 +172,7 @@
 	if(user)
 		if(!user.unEquip(new_syringe))
 			return
-		to_chat(user, "<span class='notice'>You load \the [new_syringe] into [src].</span>")
+		to_chat(user, "<span class='notice'>You load [new_syringe] into [src].</span>")
 		playsound(src, 'sound/weapons/gun_interactions/bulletinsert.ogg', 50, 1)
 	syringes.Add(new_syringe)
 	new_syringe.forceMove(src)

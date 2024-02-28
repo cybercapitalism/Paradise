@@ -23,13 +23,13 @@
 			locked = !locked
 			if(locked)
 				icon_state = icon_locked
-				to_chat(user, "<span class='warning'>You lock \the [src]!</span>")
+				to_chat(user, "<span class='warning'>You lock [src]!</span>")
 				if(user.s_active)
 					user.s_active.close(user)
 				return
 			else
 				icon_state = icon_closed
-				to_chat(user, "<span class='warning'>You unlock \the [src]!</span>")
+				to_chat(user, "<span class='warning'>You unlock [src]!</span>")
 				origin_tech = null //wipe out any origin tech if it's unlocked in any way so you can't double-dip tech levels at R&D.
 				return
 		else
@@ -77,7 +77,7 @@
 		locked = FALSE
 		desc = "It appears to be broken."
 		icon_state = icon_broken
-		to_chat(user, "<span class='notice'>You unlock \the [src].</span>")
+		to_chat(user, "<span class='notice'>You unlock [src].</span>")
 		origin_tech = null //wipe out any origin tech if it's unlocked in any way so you can't double-dip tech levels at R&D.
 		return
 

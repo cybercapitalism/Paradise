@@ -40,7 +40,7 @@
 	var/list/lizard_view = view(1, src)
 	for(var/mob/living/M in lizard_view)
 		if(M.stat == CONSCIOUS && Adjacent(M) && HAS_TRAIT(M, TRAIT_EDIBLE_BUG))
-			custom_emote(EMOTE_VISIBLE, "eats \the [M]!")
+			custom_emote(EMOTE_VISIBLE, "eats [M]!")
 			playsound(loc, eating_sound, 20, 1)
 			M.death()
 			break
@@ -51,7 +51,7 @@
 				spider.random_skitter()
 				return
 			else
-				custom_emote(EMOTE_VISIBLE, "eats \the [spider]!")
+				custom_emote(EMOTE_VISIBLE, "eats [spider]!")
 				playsound(loc, eating_sound, 20, 1)
 				qdel(spider)
 				break

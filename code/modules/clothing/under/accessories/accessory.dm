@@ -76,7 +76,7 @@
 	// This code lets you put accessories on other people by attacking their sprite with the accessory
 	if(istype(H) && !ismonkeybasic(H)) //Monkeys are a snowflake because you can't remove accessories once added
 		if(H.wear_suit && H.wear_suit.flags_inv & HIDEJUMPSUIT)
-			to_chat(user, "[H]'s body is covered, and you cannot attach \the [src].")
+			to_chat(user, "[H]'s body is covered, and you cannot attach [src].")
 			return TRUE
 		var/obj/item/clothing/under/U = H.w_uniform
 		if(istype(U))
@@ -89,7 +89,7 @@
 					user.visible_message("<span class='notice'>[user] puts a [src.name] on [H]'s [U.name]!</span>", "<span class='notice'>You finish putting a [src.name] on [H]'s [U.name].</span>")
 					after_successful_nonself_attach(H, user)
 		else
-			to_chat(user, "[H] is not wearing anything to attach \the [src] to.")
+			to_chat(user, "[H] is not wearing anything to attach [src] to.")
 		return TRUE
 	return ..()
 
@@ -155,7 +155,7 @@
 		if(user == M)
 			user.visible_message("[user] places [src] against [user.p_their()] chest and listens attentively.", "You place [src] against your chest...")
 		else
-			user.visible_message("[user] places \the [src] against [M]'s chest and listens attentively.", "You place \the [src] against [M]'s chest...")
+			user.visible_message("[user] places [src] against [M]'s chest and listens attentively.", "You place [src] against [M]'s chest...")
 		var/datum/organ/heart/heart_datum = M.get_int_organ_datum(ORGAN_DATUM_HEART)
 		var/obj/item/organ/internal/H = heart_datum.linked_organ
 		var/datum/organ/lungs/lung_datum = M.get_int_organ_datum(ORGAN_DATUM_LUNGS)

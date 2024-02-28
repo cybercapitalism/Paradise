@@ -48,7 +48,7 @@
 		return FALSE
 
 	if(C.internal == src)
-		to_chat(C, "<span class='notice'>You close \the [src] valve.</span>")
+		to_chat(C, "<span class='notice'>You close [src] valve.</span>")
 		C.internal = null
 	else
 		if(!C.get_organ_slot("breathing_tube")) // Breathing tubes can always use internals, if they have one, skip ahead and turn internals on/off
@@ -68,7 +68,7 @@
 			if(C.internal)
 				to_chat(C, "<span class='notice'>You switch your internals to [src].</span>")
 			else
-				to_chat(C, "<span class='notice'>You open \the [src] valve.</span>")
+				to_chat(C, "<span class='notice'>You open [src] valve.</span>")
 		C.internal = src
 	C.update_action_buttons_icon()
 
@@ -101,7 +101,7 @@
 	else
 		descriptive = "furiously hot"
 
-	. += "<span class='notice'>\The [bicon(icon)][src] feels [descriptive]</span>"
+	. += "<span class='notice'>[bicon(icon)][src] feels [descriptive]</span>"
 	. += "<span class='notice'>The pressure gauge displays [round(air_contents.return_pressure())] kPa</span>"
 
 /obj/item/tank/blob_act(obj/structure/blob/B)

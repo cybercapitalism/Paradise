@@ -253,7 +253,7 @@
 			user.visible_message("<span class='danger'>[user] points [src] at [T]!</span>")
 			timer = world.time + create_delay + 1
 			if(do_after(user, create_delay, target = T))
-				user.visible_message("<span class='danger'>[user] turns \the [T] into [transform_string]!</span>")
+				user.visible_message("<span class='danger'>[user] turns [T] into [transform_string]!</span>")
 				message_admins("[key_name_admin(user)] fired the lava staff at [get_area(target)] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[T.x];Y=[T.y];Z=[T.z]'>JMP</a>).")
 				log_game("[key_name(user)] fired the lava staff at [get_area(target)] ([T.x], [T.y], [T.z]).")
 				T.TerraformTurf(turf_type, keep_icon = FALSE)
@@ -264,7 +264,7 @@
 				qdel(L)
 				return
 		else
-			user.visible_message("<span class='danger'>[user] turns \the [T] into [reset_string]!</span>")
+			user.visible_message("<span class='danger'>[user] turns [T] into [reset_string]!</span>")
 			T.TerraformTurf(reset_turf_type, keep_icon = FALSE)
 			timer = world.time + reset_cooldown
 		playsound(T,'sound/magic/fireball.ogg', 200, 1)

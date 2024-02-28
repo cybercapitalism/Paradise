@@ -188,7 +188,7 @@
 		if(isrobot(user))
 			return
 		if(!user.drop_item()) //couldn't drop the item
-			to_chat(user, "<span class='notice'>\The [W] is stuck to your hand, you cannot put it in \the [src]!</span>")
+			to_chat(user, "<span class='notice'>[W] is stuck to your hand, you cannot put it in [src]!</span>")
 			return
 		if(W)
 			W.forceMove(loc)
@@ -344,7 +344,7 @@
 	//		breakout_time++ //Harder to get out of welded lockers than locked lockers
 
 	//okay, so the closet is either welded or locked... resist!!!
-	to_chat(L, "<span class='warning'>You lean on the back of \the [src] and start pushing the door open. (this will take about [breakout_time] minutes)</span>")
+	to_chat(L, "<span class='warning'>You lean on the back of [src] and start pushing the door open. (this will take about [breakout_time] minutes)</span>")
 	for(var/mob/O in viewers(usr.loc))
 		O.show_message("<span class='danger'>[src] begins to shake violently!</span>", 1)
 
@@ -363,7 +363,7 @@
 			update_icon()
 			to_chat(usr, "<span class='warning'>You successfully break out!</span>")
 			for(var/mob/O in viewers(L.loc))
-				O.show_message("<span class='danger'>\the [usr] successfully broke out of \the [src]!</span>", 1)
+				O.show_message("<span class='danger'>[usr] successfully broke out of [src]!</span>", 1)
 			if(istype(loc, /obj/structure/bigDelivery)) //nullspace ect.. read the comment above
 				var/obj/structure/bigDelivery/BD = loc
 				BD.attack_hand(usr)

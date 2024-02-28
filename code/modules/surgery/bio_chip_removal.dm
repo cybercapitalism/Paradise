@@ -47,8 +47,8 @@
 
 	I = locate(/obj/item/bio_chip) in target
 	user.visible_message(
-		"[user] starts poking around inside [target]'s [affected.name] with \the [tool].",
-		"You start poking around inside [target]'s [affected.name] with \the [tool]."
+		"[user] starts poking around inside [target]'s [affected.name] with [tool].",
+		"You start poking around inside [target]'s [affected.name] with [tool]."
 	)
 	affected.custom_pain("The pain in your [affected.name] is living hell!")
 	return ..()
@@ -69,8 +69,8 @@
 	I = locate(/obj/item/bio_chip) in target
 	if(I && prob(80)) //implant removal only works on the chest.
 		user.visible_message(
-			"<span class='notice'>[user] takes something out of [target]'s [affected.name] with \the [tool].</span>",
-			"<span class='notice'>You take \an [I] out of [target]'s [affected.name]s with \the [tool].</span>"
+			"<span class='notice'>[user] takes something out of [target]'s [affected.name] with [tool].</span>",
+			"<span class='notice'>You take \an [I] out of [target]'s [affected.name]s with [tool].</span>"
 		)
 
 		I.removed(target)
@@ -88,12 +88,12 @@
 			case.imp = I
 			I.forceMove(case)
 			case.update_state()
-			user.visible_message("[user] places \the [I] into \the [case]!", "<span class='notice'>You place \the [I] into \the [case].</span>")
+			user.visible_message("[user] places [I] into [case]!", "<span class='notice'>You place [I] into [case].</span>")
 		else
 			qdel(I)
 	else
 		user.visible_message(
-			"<span class='notice'> [user] could not find anything inside [target]'s [affected.name], and pulls \the [tool] out.</span>",
+			"<span class='notice'> [user] could not find anything inside [target]'s [affected.name], and pulls [tool] out.</span>",
 			"<span class='notice'>You could not find anything inside [target]'s [affected.name].</span>"
 		)
 	return SURGERY_STEP_CONTINUE

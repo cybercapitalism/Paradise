@@ -1154,10 +1154,10 @@
 
 	if(src.icon_state == "jane_sid_suit_down")
 		src.item_color = "jane_sid_suit"
-		to_chat(usr, "You zip up \the [src].")
+		to_chat(usr, "You zip up [src].")
 	else
 		src.item_color = "jane_sid_suit_down"
-		to_chat(usr, "You unzip and roll down \the [src].")
+		to_chat(usr, "You unzip and roll down [src].")
 
 	src.icon_state = "[item_color]"
 	src.item_state = "[item_color]"
@@ -1327,12 +1327,12 @@
 	if(adjusted)
 		icon_state = initial(icon_state)
 		item_state = initial(item_state)
-		to_chat(usr, "You untransform \the [src].")
+		to_chat(usr, "You untransform [src].")
 		adjusted = 0
 	else
 		icon_state += "_open"
 		item_state += "_open"
-		to_chat(usr, "You transform \the [src].")
+		to_chat(usr, "You transform [src].")
 		adjusted = 1
 	usr.update_inv_head()
 	for(var/X in actions)

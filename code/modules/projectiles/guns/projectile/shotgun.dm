@@ -31,7 +31,7 @@
 		return
 	var/num_loaded = magazine.attackby(A, user, params, 1)
 	if(num_loaded)
-		to_chat(user, "<span class='notice'>You load [num_loaded] shell\s into \the [src]!</span>")
+		to_chat(user, "<span class='notice'>You load [num_loaded] shell\s into [src]!</span>")
 		A.update_icon()
 		update_icon()
 
@@ -117,7 +117,7 @@
 	if(chambered)	//if the gun is chambering live ammo, shoot self, if chambering empty ammo, 'click'
 		if(chambered.BB)
 			process_fire(user, user)
-			user.visible_message("<span class='danger'>\The [src] goes off!</span>", "<span class='danger'>\The [src] goes off in your face!</span>")
+			user.visible_message("<span class='danger'>[src] goes off!</span>", "<span class='danger'>[src] goes off in your face!</span>")
 			return
 		else
 			afterattack(user, user)
@@ -132,7 +132,7 @@
 				CB.update_icon()
 
 	if(do_after(user, 30, target = src))
-		user.visible_message("[user] shortens \the [src]!", "<span class='notice'>You shorten \the [src].</span>")
+		user.visible_message("[user] shortens [src]!", "<span class='notice'>You shorten [src].</span>")
 		post_sawoff()
 		return 1
 
@@ -158,7 +158,7 @@
 	if(chambered)	//if the gun is chambering live ammo, shoot self, if chambering empty ammo, 'click'
 		if(chambered.BB)
 			afterattack(user, user)
-			user.visible_message("<span class='danger'>\The [src] goes off!</span>", "<span class='danger'>\The [src] goes off in your face!</span>")
+			user.visible_message("<span class='danger'>[src] goes off!</span>", "<span class='danger'>[src] goes off in your face!</span>")
 			return
 		else
 			afterattack(user, user)

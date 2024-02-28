@@ -81,7 +81,7 @@
 			return
 		if(!ishuman(usr))
 			return
-		usr.visible_message("<span class='notice'>[usr] grabs \the [src.name].</span>", "<span class='notice'>You grab \the [src.name].</span>")
+		usr.visible_message("<span class='notice'>[usr] grabs [src.name].</span>", "<span class='notice'>You grab [src.name].</span>")
 		var/C = new item_chair(loc)
 		usr.put_in_hands(C)
 		qdel(src)
@@ -538,7 +538,7 @@
 	if(!proximity)
 		return
 	if(prob(break_chance))
-		user.visible_message("<span class='danger'>[user] smashes \the [src] to pieces against \the [target]</span>")
+		user.visible_message("<span class='danger'>[user] smashes [src] to pieces against [target]</span>")
 		if(iscarbon(target))
 			var/mob/living/carbon/C = target
 			if(C.health < C.maxHealth*0.5)

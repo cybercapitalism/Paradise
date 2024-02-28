@@ -235,7 +235,7 @@
 	if(CM.stat || CM.restrained())
 		return
 
-	to_chat(CM, "<span class='alert'>You attempt to slide yourself out of \the [src]...</span>")
+	to_chat(CM, "<span class='alert'>You attempt to slide yourself out of [src]...</span>")
 	src.attack_hand(CM)
 
 
@@ -529,7 +529,7 @@ GLOBAL_LIST_EMPTY(crematoriums)
 	if(CM.stat || CM.restrained())
 		return
 
-	to_chat(CM, "<span class='alert'>You attempt to slide yourself out of \the [src]...</span>")
+	to_chat(CM, "<span class='alert'>You attempt to slide yourself out of [src]...</span>")
 	attack_hand(CM)
 
 /obj/structure/crematorium/get_remote_view_fullscreens(mob/user)

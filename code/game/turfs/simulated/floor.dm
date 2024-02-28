@@ -174,8 +174,8 @@ GLOBAL_LIST_INIT(icons_to_ignore_at_floor_init, list("damaged1","damaged2","dama
 		var/obj/item/pipe/P = C
 		if(P.pipe_type != -1) // ANY PIPE
 			user.visible_message( \
-				"[user] starts sliding [P] along \the [src].", \
-				"<span class='notice'>You slide [P] along \the [src].</span>", \
+				"[user] starts sliding [P] along [src].", \
+				"<span class='notice'>You slide [P] along [src].</span>", \
 				"You hear the scrape of metal against something.")
 			user.drop_item()
 

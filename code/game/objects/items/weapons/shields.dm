@@ -157,7 +157,7 @@
 		throw_speed = 2
 		w_class = WEIGHT_CLASS_BULKY
 		slot_flags = SLOT_FLAG_BACK
-		to_chat(user, "<span class='notice'>You extend \the [src].</span>")
+		to_chat(user, "<span class='notice'>You extend [src].</span>")
 	else
 		force = 3
 		throwforce = 3

@@ -229,7 +229,7 @@
 /obj/effect/proc_holder/spell/aoe/revenant/overload/proc/shock_lights(obj/machinery/light/L, mob/living/simple_animal/revenant/user)
 	if(!L.on)
 		return
-	L.visible_message("<span class='warning'><b>\The [L] suddenly flares brightly and begins to spark!</span>")
+	L.visible_message("<span class='warning'><b>[L] suddenly flares brightly and begins to spark!</span>")
 	do_sparks(4, 0, L)
 	new /obj/effect/temp_visual/revenant(L.loc)
 	sleep(2 SECONDS)

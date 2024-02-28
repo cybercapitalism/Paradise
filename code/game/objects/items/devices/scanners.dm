@@ -862,7 +862,7 @@ REAGENT SCANNER
 			t1 = "Unconscious"
 		else
 			t1 = "*dead*"
-	dat += "[target.health > 50 ? "<font color='blue'>" : "<font color='red'>"]\tHealth %: [target.health], ([t1])</font><br>"
+	dat += "[target.health > 50 ? "<font color='blue'>" : "<font color='red'>"]lth %: [target.health], ([t1])</font><br>"
 
 	var/found_disease = FALSE
 	for(var/thing in target.viruses)

@@ -29,7 +29,7 @@
 
 	delayed = 1
 	if(label)
-		user.visible_message("<span class='notice'>[user] waves around \the \"[label]\" sign.</span>")
+		user.visible_message("<span class='notice'>[user] waves around \"[label]\" sign.</span>")
 	else
 		user.visible_message("<span class='notice'>[user] waves around blank sign.</span>")
 	user.changeNext_move(CLICK_CD_MELEE)

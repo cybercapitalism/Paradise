@@ -49,7 +49,7 @@
 		A.icon = 'icons/obj/assemblies.dmi'
 
 		if(!user.unEquip(W))
-			to_chat(user, "<span class='notice'>\the [W] is stuck to your hand, you cannot attach it to \the [src]!</span>")
+			to_chat(user, "<span class='notice'>[W] is stuck to your hand, you cannot attach it to [src]!</span>")
 			return
 
 		W.loc = A

@@ -268,7 +268,7 @@
 /mob/living/run_pointed(atom/A)
 	if(!..())
 		return FALSE
-	var/pointed_object = "\the [A]"
+	var/pointed_object = "[A]"
 	if(A.loc in src)
 		pointed_object += " inside [A.loc]"
 
@@ -853,7 +853,7 @@
 /mob/living/stripPanelUnequip(obj/item/what, mob/who, where, silent = 0)
 	var/item_name = get_strip_slot_name_override(where) || what.name
 	if(what.flags & NODROP)
-		to_chat(src, "<span class='warning'>You can't remove \the [item_name], it appears to be stuck!</span>")
+		to_chat(src, "<span class='warning'>You can't remove [item_name], it appears to be stuck!</span>")
 		return
 	if(!silent)
 		who.visible_message("<span class='danger'>[src] tries to remove [who]'s [item_name].</span>", \
@@ -871,11 +871,11 @@
 /mob/living/stripPanelEquip(obj/item/what, mob/who, where, silent = 0)
 	what = get_active_hand()
 	if(what && (what.flags & NODROP))
-		to_chat(src, "<span class='warning'>You can't put \the [what.name] on [who], it's stuck to your hand!</span>")
+		to_chat(src, "<span class='warning'>You can't put [what.name] on [who], it's stuck to your hand!</span>")
 		return
 	if(what)
 		if(!what.mob_can_equip(who, where, 1))
-			to_chat(src, "<span class='warning'>\The [what.name] doesn't fit in that place!</span>")
+			to_chat(src, "<span class='warning'>[what.name] doesn't fit in that place!</span>")
 			return
 		if(!silent)
 			visible_message("<span class='notice'>[src] tries to put [what] on [who].</span>")

@@ -60,7 +60,7 @@
 
 /obj/item/lipstick/attack_self(mob/user)
 	cut_overlays()
-	to_chat(user, "<span class='notice'>You twist \the [src] [open ? "closed" : "open"].</span>")
+	to_chat(user, "<span class='notice'>You twist [src] [open ? "closed" : "open"].</span>")
 	open = !open
 	if(open)
 		var/mutable_appearance/colored = mutable_appearance('icons/obj/items.dmi', "lipstick_uncap_color")
@@ -86,11 +86,11 @@
 			H.lip_color = lipstick_colors[colour]
 			H.update_body()
 		else
-			user.visible_message("<span class='warning'>[user] begins to do [H]'s lips with \the [src].</span>", \
-								"<span class='notice'>You begin to apply \the [src].</span>")
+			user.visible_message("<span class='warning'>[user] begins to do [H]'s lips with [src].</span>", \
+								"<span class='notice'>You begin to apply [src].</span>")
 			if(do_after(user, 20, target = H))
-				user.visible_message("<span class='notice'>[user] does [H]'s lips with \the [src].</span>", \
-									"<span class='notice'>You apply \the [src].</span>")
+				user.visible_message("<span class='notice'>[user] does [H]'s lips with [src].</span>", \
+									"<span class='notice'>You apply [src].</span>")
 				H.lip_style = "lipstick"
 				H.lip_color = lipstick_colors[colour]
 				H.update_body()
@@ -127,7 +127,7 @@
 				return
 			if(H == user) //shaving yourself
 				user.visible_message("<span class='notice'>[user] starts to shave [user.p_their()] facial hair with [src].</span>", \
-				"<span class='notice'>You take a moment shave your facial hair with \the [src].</span>")
+				"<span class='notice'>You take a moment shave your facial hair with [src].</span>")
 				if(do_after(user, 50 * toolspeed, target = H))
 					user.visible_message("<span class='notice'>[user] shaves [user.p_their()] facial hair clean with [src].</span>", \
 					"<span class='notice'>You finish shaving with [src]. Fast and clean!</span>")
@@ -137,11 +137,11 @@
 			else
 				var/turf/user_loc = user.loc
 				var/turf/H_loc = H.loc
-				user.visible_message("<span class='danger'>[user] tries to shave [H]'s facial hair with \the [src].</span>", \
+				user.visible_message("<span class='danger'>[user] tries to shave [H]'s facial hair with [src].</span>", \
 				"<span class='warning'>You start shaving [H]'s facial hair.</span>")
 				if(do_after(user, 50 * toolspeed, target = H))
 					if(user_loc == user.loc && H_loc == H.loc)
-						user.visible_message("<span class='danger'>[user] shaves off [H]'s facial hair with \the [src].</span>", \
+						user.visible_message("<span class='danger'>[user] shaves off [H]'s facial hair with [src].</span>", \
 						"<span class='notice'>You shave [H]'s facial hair clean off.</span>")
 						C.f_style = "Shaved"
 						H.update_fhair()
@@ -161,21 +161,21 @@
 				return
 			if(H == user) //shaving yourself
 				user.visible_message("<span class='warning'>[user] starts to shave [user.p_their()] head with [src].</span>", \
-				"<span class='warning'>You start to shave your head with \the [src].</span>")
+				"<span class='warning'>You start to shave your head with [src].</span>")
 				if(do_after(user, 50 * toolspeed, target = H))
 					user.visible_message("<span class='notice'>[user] shaves [user.p_their()] head with [src].</span>", \
-					"<span class='notice'>You finish shaving with \the [src].</span>")
+					"<span class='notice'>You finish shaving with [src].</span>")
 					C.h_style = "Skinhead"
 					H.update_hair()
 					playsound(src.loc, usesound, 40, 1)
 			else
 				var/turf/user_loc = user.loc
 				var/turf/H_loc = H.loc
-				user.visible_message("<span class='danger'>[user] tries to shave [H]'s head with \the [src]!</span>", \
+				user.visible_message("<span class='danger'>[user] tries to shave [H]'s head with [src]!</span>", \
 				"<span class='warning'>You start shaving [H]'s head.</span>")
 				if(do_after(user, 50 * toolspeed, target = H))
 					if(user_loc == user.loc && H_loc == H.loc)
-						user.visible_message("<span class='danger'>[user] shaves [H]'s head bald with \the [src]!</span>", \
+						user.visible_message("<span class='danger'>[user] shaves [H]'s head bald with [src]!</span>", \
 						"<span class='warning'>You shave [H]'s head bald.</span>")
 						C.h_style = "Skinhead"
 						H.update_hair()

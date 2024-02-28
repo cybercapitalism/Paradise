@@ -64,15 +64,15 @@
 		if(!fireaxe)
 			var/obj/item/fireaxe/F = O
 			if(HAS_TRAIT(F, TRAIT_WIELDED))
-				to_chat(user, "<span class='warning'>Unwield \the [F] first.</span>")
+				to_chat(user, "<span class='warning'>Unwield [F] first.</span>")
 				return
 			if(!user.unEquip(F, FALSE))
-				to_chat(user, "<span class='warning'>\The [F] stays stuck to your hands!</span>")
+				to_chat(user, "<span class='warning'>[F] stays stuck to your hands!</span>")
 				return
 			fireaxe = F
 			has_axe = "full"
 			contents += F
-			to_chat(user, "<span class='notice'>You place \the [F] back in the [name].</span>")
+			to_chat(user, "<span class='notice'>You place [F] back in the [name].</span>")
 			update_icon(UPDATE_ICON_STATE)
 		else
 			if(smashed)
@@ -102,7 +102,7 @@
 		return
 	if(localopened && fireaxe)
 		user.put_in_hands(fireaxe)
-		to_chat(user, "<span class='notice'>You take \the [fireaxe] from [src].</span>")
+		to_chat(user, "<span class='notice'>You take [fireaxe] from [src].</span>")
 		has_axe = "empty"
 		fireaxe = null
 
@@ -116,7 +116,7 @@
 /obj/structure/closet/fireaxecabinet/attack_tk(mob/user as mob)
 	if(localopened && fireaxe)
 		fireaxe.forceMove(loc)
-		to_chat(user, "<span class='notice'>You telekinetically remove \the [fireaxe].</span>")
+		to_chat(user, "<span class='notice'>You telekinetically remove [fireaxe].</span>")
 		has_axe = "empty"
 		fireaxe = null
 		update_icon(UPDATE_ICON_STATE)

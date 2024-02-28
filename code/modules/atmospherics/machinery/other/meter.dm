@@ -96,11 +96,11 @@ GLOBAL_LIST_EMPTY(gas_meters)
 	if(!iswrench(W))
 		return ..()
 	playsound(loc, W.usesound, 50, 1)
-	to_chat(user, "<span class='notice'>You begin to unfasten \the [src]...</span>")
+	to_chat(user, "<span class='notice'>You begin to unfasten [src]...</span>")
 	if(do_after(user, 40 * W.toolspeed, target = src))
 		user.visible_message( \
-			"[user] unfastens \the [src].", \
-			"<span class='notice'>You have unfastened \the [src].</span>", \
+			"[user] unfastens [src].", \
+			"<span class='notice'>You have unfastened [src].</span>", \
 			"You hear ratchet.")
 		deconstruct(TRUE)
 

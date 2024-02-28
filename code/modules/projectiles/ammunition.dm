@@ -83,7 +83,7 @@
 		return
 
 	var/tmp_label = ""
-	var/label_text = tgui_input_text(user, "Inscribe some text into \the [initial(BB.name)]", "Inscription", tmp_label)
+	var/label_text = tgui_input_text(user, "Inscribe some text into [initial(BB.name)]", "Inscription", tmp_label)
 	if(!label_text)
 		return
 
@@ -95,7 +95,7 @@
 		to_chat(user, "<span class='notice'>You scratch the inscription off of [initial(BB)].</span>")
 		BB.name = initial(BB.name)
 	else
-		to_chat(user, "<span class='notice'>You inscribe \"[label_text]\" into \the [initial(BB.name)].</span>")
+		to_chat(user, "<span class='notice'>You inscribe \"[label_text]\" into [initial(BB.name)].</span>")
 		BB.name = "[initial(BB.name)] \"[label_text]\""
 
 
@@ -216,7 +216,7 @@
 			num_loaded++
 	if(num_loaded)
 		if(!silent)
-			to_chat(user, "<span class='notice'>You load [num_loaded] shell\s into \the [src]!</span>")
+			to_chat(user, "<span class='notice'>You load [num_loaded] shell\s into [src]!</span>")
 		playsound(src, 'sound/weapons/gun_interactions/shotguninsert.ogg', 50, 1)
 		A.update_appearance(UPDATE_DESC|UPDATE_ICON_STATE)
 		update_appearance(UPDATE_DESC|UPDATE_ICON_STATE)
@@ -228,7 +228,7 @@
 	if(A)
 		user.put_in_hands(A)
 		playsound(src, 'sound/weapons/gun_interactions/remove_bullet.ogg', 50, 1)
-		to_chat(user, "<span class='notice'>You remove a round from \the [src]!</span>")
+		to_chat(user, "<span class='notice'>You remove a round from [src]!</span>")
 		update_appearance(UPDATE_DESC|UPDATE_ICON_STATE)
 
 // `multi_sprite_step` governs whether there are different sprites for different degrees of being loaded.

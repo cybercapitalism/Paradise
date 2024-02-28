@@ -361,7 +361,7 @@
 		var/obj/item/card/id/I = O
 		if(isliving(user) && user.mind)
 			if(user.mind.special_role)
-				to_chat(usr, "<span class='notice'>The card's microscanners activate as you pass it over \the [I], copying its access.</span>")
+				to_chat(usr, "<span class='notice'>The card's microscanners activate as you pass it over [I], copying its access.</span>")
 				src.access |= I.access //Don't copy access if user isn't an antag -- to prevent metagaming
 
 /obj/item/card/id/syndicate/attack_self(mob/user as mob)
@@ -603,7 +603,7 @@
 							fingerprint_hash = initial(fingerprint_hash)
 							photo = null
 							registered_user = null
-							to_chat(user, "<span class='notice'>All information has been deleted from \the [src].</span>")
+							to_chat(user, "<span class='notice'>All information has been deleted from [src].</span>")
 							RebuildHTML()
 	else
 		..()

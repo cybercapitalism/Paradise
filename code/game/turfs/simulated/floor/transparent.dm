@@ -58,7 +58,7 @@
 			R = robouser.module_state_3
 
 	if(!istype(R, /obj/item/stack/sheet/metal) || R.get_amount() < 2)
-		to_chat(user, "<span class='danger'>You also need to hold two sheets of metal to dismantle \the [src]!</span>")
+		to_chat(user, "<span class='danger'>You also need to hold two sheets of metal to dismantle [src]!</span>")
 		return
 
 	to_chat(user, "<span class='notice'>You begin replacing [src]...</span>")
@@ -125,7 +125,7 @@
 	var/obj/item/thing = user.get_inactive_hand()
 	if(!thing || !prying_tool_list.Find(thing.tool_behaviour))
 		return
-	to_chat(user, "<span class='danger'>You need to hold two sheets of metal to dismantle \the [src]!</span>")
+	to_chat(user, "<span class='danger'>You need to hold two sheets of metal to dismantle [src]!</span>")
 
 /turf/simulated/floor/transparent/glass/reinforced
 	name = "reinforced glass floor"

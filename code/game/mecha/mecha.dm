@@ -737,7 +737,7 @@
 
 	else if(istype(W, /obj/item/mecha_parts/mecha_tracking))
 		if(!user.unEquip(W))
-			to_chat(user, "<span class='notice'>\the [W] is stuck to your hand, you cannot put it in \the [src]</span>")
+			to_chat(user, "<span class='notice'>[W] is stuck to your hand, you cannot put it in [src]</span>")
 			return
 
 		// Check if a tracker exists
@@ -1209,7 +1209,7 @@
 			to_chat(user, "Beta-rhythm below acceptable level.")
 			return FALSE
 		if(!user.unEquip(mmi_as_oc))
-			to_chat(user, "<span class='notice'>\the [mmi_as_oc] is stuck to your hand, you cannot put it in \the [src]</span>")
+			to_chat(user, "<span class='notice'>[mmi_as_oc] is stuck to your hand, you cannot put it in [src]</span>")
 			return FALSE
 		var/mob/living/brain/brainmob = mmi_as_oc.brainmob
 		brainmob.reset_perspective(src)

@@ -104,20 +104,20 @@
 		if(istype(AM, mag_type))
 			if(can_reload())
 				reload(AM, user)
-				to_chat(user, "<span class='notice'>You load a new magazine into \the [src].</span>")
+				to_chat(user, "<span class='notice'>You load a new magazine into [src].</span>")
 				return TRUE
 			else if(!can_tactical)
-				to_chat(user, "<span class='notice'>There's already a magazine in \the [src].</span>")
+				to_chat(user, "<span class='notice'>There's already a magazine in [src].</span>")
 				return TRUE
 			else
-				to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src], replacing the magazine.</span>")
+				to_chat(user, "<span class='notice'>You perform a tactical reload on [src], replacing the magazine.</span>")
 				magazine.loc = get_turf(loc)
 				magazine.update_icon()
 				magazine = null
 				reload(AM, user)
 				return TRUE
 		else
-			to_chat(user, "<span class='notice'>You can't put this type of ammo in \the [src].</span>")
+			to_chat(user, "<span class='notice'>You can't put this type of ammo in [src].</span>")
 			return TRUE
 	if(istype(A, /obj/item/suppressor))
 		var/obj/item/suppressor/S = A
@@ -168,16 +168,16 @@
 		user.put_in_hands(magazine)
 		magazine.update_icon()
 		magazine = null
-		to_chat(user, "<span class='notice'>You pull the magazine out of \the [src]!</span>")
+		to_chat(user, "<span class='notice'>You pull the magazine out of [src]!</span>")
 		playsound(src, magout_sound, 50, 1)
 	else if(chambered)
 		AC.loc = get_turf(src)
 		AC.SpinAnimation(10, 1)
 		chambered = null
-		to_chat(user, "<span class='notice'>You unload the round from \the [src]'s chamber.</span>")
+		to_chat(user, "<span class='notice'>You unload the round from [src]'s chamber.</span>")
 		playsound(src, 'sound/weapons/gun_interactions/remove_bullet.ogg', 50, 1)
 	else
-		to_chat(user, "<span class='notice'>There's no magazine in \the [src].</span>")
+		to_chat(user, "<span class='notice'>There's no magazine in [src].</span>")
 	update_icon()
 	return
 
@@ -212,23 +212,23 @@
 
 /obj/item/gun/projectile/proc/sawoff(mob/user)
 	if(sawn_state == SAWN_OFF)
-		to_chat(user, "<span class='warning'>\The [src] is already shortened!</span>")
+		to_chat(user, "<span class='warning'>[src] is already shortened!</span>")
 		return
 	if(bayonet)
 		to_chat(user, "<span class='warning'>You cannot saw-off [src] with [bayonet] attached!</span>")
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
-	user.visible_message("[user] begins to shorten \the [src].", "<span class='notice'>You begin to shorten \the [src]...</span>")
+	user.visible_message("[user] begins to shorten [src].", "<span class='notice'>You begin to shorten [src]...</span>")
 
 	//if there's any live ammo inside the gun, makes it go off
 	if(blow_up(user))
-		user.visible_message("<span class='danger'>\The [src] goes off!</span>", "<span class='danger'>\The [src] goes off in your face!</span>")
+		user.visible_message("<span class='danger'>[src] goes off!</span>", "<span class='danger'>[src] goes off in your face!</span>")
 		return
 
 	if(do_after(user, 30, target = src))
 		if(sawn_state == SAWN_OFF)
 			return
-		user.visible_message("[user] shortens \the [src]!", "<span class='notice'>You shorten \the [src].</span>")
+		user.visible_message("[user] shortens [src]!", "<span class='notice'>You shorten [src].</span>")
 		w_class = WEIGHT_CLASS_NORMAL
 		item_state = "gun"//phil235 is it different with different skin?
 		slot_flags &= ~SLOT_FLAG_BACK	//you can't sling it on your back

@@ -38,7 +38,7 @@
 	mode = !mode
 	icon_state = "labeler[mode]"
 	if(mode)
-		to_chat(user, "<span class='notice'>You turn on \the [src].</span>")
+		to_chat(user, "<span class='notice'>You turn on [src].</span>")
 		//Now let them chose the text.
 		var/str = reject_bad_text(tgui_input_text(user,"Label text?", "Set label"))
 		if(!str || !length(str))
@@ -47,7 +47,7 @@
 		label = str
 		to_chat(user, "<span class='notice'>You set the text to '[str]'.</span>")
 	else
-		to_chat(user, "<span class='notice'>You turn off \the [src].</span>")
+		to_chat(user, "<span class='notice'>You turn off [src].</span>")
 
 /obj/item/hand_labeler/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/hand_labeler_refill))

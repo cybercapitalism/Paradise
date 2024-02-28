@@ -414,14 +414,14 @@
 		to_chat(user, "<span class='warning'>You lack a cell in which to store charge!</span>")
 
 /obj/item/apc_powercord/proc/powerdraw_loop(obj/machinery/power/apc/A, mob/living/carbon/human/H)
-	H.visible_message("<span class='notice'>[H] inserts a power connector into \the [A].</span>", "<span class='notice'>You begin to draw power from \the [A].</span>")
+	H.visible_message("<span class='notice'>[H] inserts a power connector into [A].</span>", "<span class='notice'>You begin to draw power from [A].</span>")
 	drawing_power = TRUE
 	while(do_after(H, 10, target = A))
 		if(loc != H)
 			to_chat(H, "<span class='warning'>You must keep your connector out while charging!</span>")
 			break
 		if(A.cell.charge == 0)
-			to_chat(H, "<span class='warning'>\The [A] has no more charge.</span>")
+			to_chat(H, "<span class='warning'>[A] has no more charge.</span>")
 			break
 		A.charging = APC_IS_CHARGING
 		if(A.cell.charge >= 500)
@@ -431,12 +431,12 @@
 		else
 			H.adjust_nutrition(A.cell.charge * 0.1)
 			A.cell.charge = 0
-			to_chat(H, "<span class='notice'>You siphon off the last of \the [A]'s charge.</span>")
+			to_chat(H, "<span class='notice'>You siphon off the last of [A]'s charge.</span>")
 			break
 		if(H.nutrition > NUTRITION_LEVEL_WELL_FED)
 			to_chat(H, "<span class='notice'>You are now fully charged.</span>")
 			break
-	H.visible_message("<span class='notice'>[H] unplugs from \the [A].</span>", "<span class='notice'>You unplug from \the [A].</span>")
+	H.visible_message("<span class='notice'>[H] unplugs from [A].</span>", "<span class='notice'>You unplug from [A].</span>")
 	drawing_power = FALSE
 
 /obj/item/organ/internal/cyberimp/arm/telebaton

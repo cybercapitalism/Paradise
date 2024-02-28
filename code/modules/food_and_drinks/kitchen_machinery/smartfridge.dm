@@ -182,11 +182,11 @@
 		SStgui.update_uis(src)
 		return
 	if(stat & (BROKEN|NOPOWER))
-		to_chat(user, "<span class='notice'>\The [src] is unpowered and useless.</span>")
+		to_chat(user, "<span class='notice'>[src] is unpowered and useless.</span>")
 		return
 
 	if(load(O, user))
-		user.visible_message("<span class='notice'>[user] has added \the [O] to \the [src].</span>", "<span class='notice'>You add \the [O] to \the [src].</span>")
+		user.visible_message("<span class='notice'>[user] has added [O] to [src].</span>", "<span class='notice'>You add [O] to [src].</span>")
 		SStgui.update_uis(src)
 		update_icon(UPDATE_OVERLAYS)
 	else if(istype(O, /obj/item/storage/bag) || istype(O, /obj/item/storage/box))
@@ -196,14 +196,14 @@
 			if(load(G, user))
 				items_loaded++
 		if(items_loaded)
-			user.visible_message("<span class='notice'>[user] loads \the [src] with \the [P].</span>", "<span class='notice'>You load \the [src] with \the [P].</span>")
+			user.visible_message("<span class='notice'>[user] loads [src] with [P].</span>", "<span class='notice'>You load [src] with [P].</span>")
 			SStgui.update_uis(src)
 			update_icon(UPDATE_OVERLAYS)
 		var/failed = length(P.contents)
 		if(failed)
 			to_chat(user, "<span class='notice'>[failed] item\s [failed == 1 ? "is" : "are"] refused.</span>")
 	else if(!istype(O, /obj/item/card/emag))
-		to_chat(user, "<span class='notice'>\The [src] smartly refuses [O].</span>")
+		to_chat(user, "<span class='notice'>[src] smartly refuses [O].</span>")
 		return TRUE
 
 /obj/machinery/smartfridge/attack_ai(mob/user)
@@ -228,12 +228,12 @@
 	if(!istype(over_object, /obj/item/storage/pill_bottle)) //Only pill bottles, please
 		return
 	if(stat & (BROKEN|NOPOWER))
-		to_chat(user, "<span class='notice'>\The [src] is unpowered and useless.</span>")
+		to_chat(user, "<span class='notice'>[src] is unpowered and useless.</span>")
 		return TRUE
 
 	var/obj/item/storage/box/pillbottles/P = over_object
 	if(!length(P.contents))
-		to_chat(user, "<span class='notice'>\The [P] is empty.</span>")
+		to_chat(user, "<span class='notice'>[P] is empty.</span>")
 		return TRUE
 
 	var/items_loaded = 0
@@ -241,7 +241,7 @@
 		if(load(G, user))
 			items_loaded++
 	if(items_loaded)
-		user.visible_message("<span class='notice'>[user] empties \the [P] into \the [src].</span>", "<span class='notice'>You empty \the [P] into \the [src].</span>")
+		user.visible_message("<span class='notice'>[user] empties [P] into [src].</span>", "<span class='notice'>You empty [P] into [src].</span>")
 		update_icon(UPDATE_OVERLAYS)
 	var/failed = length(P.contents)
 	if(failed)
@@ -334,7 +334,7 @@
 /obj/machinery/smartfridge/proc/load(obj/I, mob/user)
 	if(accept_check(I))
 		if(length(contents) >= max_n_of_items)
-			to_chat(user, "<span class='notice'>\The [src] is full.</span>")
+			to_chat(user, "<span class='notice'>[src] is full.</span>")
 			return FALSE
 		else
 			if(isstorage(I.loc))
@@ -347,7 +347,7 @@
 				var/mob/M = I.loc
 				if(M.get_active_hand() == I)
 					if(!M.drop_item())
-						to_chat(user, "<span class='warning'>\The [I] is stuck to you!</span>")
+						to_chat(user, "<span class='warning'>[I] is stuck to you!</span>")
 						return FALSE
 				else
 					M.unEquip(I)
@@ -406,7 +406,7 @@
 
 /obj/machinery/smartfridge/secure/emag_act(mob/user)
 	emagged = TRUE
-	to_chat(user, "<span class='notice'>You short out the product lock on \the [src].</span>")
+	to_chat(user, "<span class='notice'>You short out the product lock on [src].</span>")
 	return TRUE
 
 /obj/machinery/smartfridge/secure/emp_act(severity)

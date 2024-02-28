@@ -109,10 +109,10 @@
 			if(T.spider_myqueen != src)
 				continue
 			if(prob(50) || T.spider_tier >= spider_tier)
-				to_chat(T, "<span class='userdanger'>\The psychic backlash from the death of [src] crashes into your mind! Somehow... you find a way to keep going!</span>")
+				to_chat(T, "<span class='userdanger'>psychic backlash from the death of [src] crashes into your mind! Somehow... you find a way to keep going!</span>")
 				continue
 			T.visible_message("<span class='danger'>[T] writhes in pain!</span>")
-			to_chat(T, "<span class='userdanger'>\The psychic backlash from the death of [src] overwhelms you! You feel the life start to drain out of you...</span>")
+			to_chat(T, "<span class='userdanger'>psychic backlash from the death of [src] overwhelms you! You feel the life start to drain out of you...</span>")
 			T.degenerate = TRUE
 		for(var/thing in GLOB.ts_spiderling_list)
 			var/obj/structure/spider/spiderling/terror_spiderling/T = thing
@@ -166,10 +166,10 @@
 				if(ok_to_nest && entry_vent)
 					nest_vent = entry_vent
 					neststep = 1
-					visible_message("<span class='danger'>\The [src] settles down, starting to build a nest.</span>")
+					visible_message("<span class='danger'>[src] settles down, starting to build a nest.</span>")
 				else if(entry_vent)
 					if(!path_to_vent)
-						visible_message("<span class='danger'>\The [src] looks around warily - then seeks a better nesting ground.</span>")
+						visible_message("<span class='danger'>[src] looks around warily - then seeks a better nesting ground.</span>")
 						path_to_vent = TRUE
 				else
 					neststep = -1

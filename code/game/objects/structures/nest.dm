@@ -49,7 +49,7 @@
 /obj/structure/nest/proc/try_spawn(mob/living/L)
 	var/chosen_mob = pick(spawn_mob_options)
 
-	to_chat(L, "<span class='danger'>As you stumble across \the [name], you can hear ominous rumbling from beneath your feet!</span>")
+	to_chat(L, "<span class='danger'>As you stumble across [name], you can hear ominous rumbling from beneath your feet!</span>")
 	playsound(src, 'sound/effects/break_stone.ogg', 50, 1)
 	for(var/obj/structure/nest/N in range(spawn_trigger_distance, src))
 		N.spawn_is_triggered = TRUE
@@ -61,7 +61,7 @@
 
 	for(var/i in 1 to spawn_max)
 		var/mob/spawned_mob = new M(get_turf(src))
-		visible_message("<span class='danger'>\A [spawned_mob.name] crawls out of \the [name]!</span>")
+		visible_message("<span class='danger'>\A [spawned_mob.name] crawls out of [name]!</span>")
 
 /obj/structure/nest/lavaland
 	spawn_mob_options = list(/mob/living/simple_animal/hostile/asteroid/goliath/beast, /mob/living/simple_animal/hostile/asteroid/goldgrub)

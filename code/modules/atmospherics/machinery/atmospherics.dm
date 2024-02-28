@@ -208,7 +208,7 @@ Pipelines + Other Objects -> Pipe network
 		var/internal_pressure = I - E
 
 		playsound(loc, W.usesound, 50, 1)
-		to_chat(user, "<span class='notice'>You begin to unfasten \the [src]...</span>")
+		to_chat(user, "<span class='notice'>You begin to unfasten [src]...</span>")
 
 		if(HAS_TRAIT(user, TRAIT_MAGPULSE))
 			safefromgusts = TRUE

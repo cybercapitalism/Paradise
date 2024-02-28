@@ -568,9 +568,9 @@ GLOBAL_LIST_EMPTY(deadsay_radio_systems)
 	. = ..()
 	if(in_range(src, user) || loc == user)
 		if(b_stat)
-			. += "<span class='notice'>\the [src] can be attached and modified!</span>"
+			. += "<span class='notice'>[src] can be attached and modified!</span>"
 		else
-			. += "<span class='notice'>\the [src] can not be modified or attached!</span>"
+			. += "<span class='notice'>[src] can not be modified or attached!</span>"
 
 /obj/item/radio/screwdriver_act(mob/user, obj/item/I)
 	. = TRUE

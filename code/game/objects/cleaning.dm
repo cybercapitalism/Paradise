@@ -25,7 +25,7 @@
 		text_verb = "clean the ooze off"
 		cleanspeed = CMAG_CLEANTIME
 
-	user.visible_message("<span class='warning'>[user] begins to [text_verb] \the [text_targetname][text_description]</span>", "<span class='warning'>You begin to [text_verb] \the [text_targetname][text_description]</span>")
+	user.visible_message("<span class='warning'>[user] begins to [text_verb] [text_targetname][text_description]</span>", "<span class='warning'>You begin to [text_verb] [text_targetname][text_description]</span>")
 	if(!do_after(user, cleanspeed, target = src))
 		return FALSE
 
@@ -35,7 +35,7 @@
 
 	cleaner.post_clean(src, user)
 
-	to_chat(user, "<span class='notice'>You [text_verb] \the [text_targetname][text_description]</span>")
+	to_chat(user, "<span class='notice'>You [text_verb] [text_targetname][text_description]</span>")
 
 	if(is_cmagged) //If we've cleaned a cmagged object
 		REMOVE_TRAIT(src, TRAIT_CMAGGED, CLOWN_EMAG)

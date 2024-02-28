@@ -45,7 +45,7 @@
 	if(stat & BROKEN || panel_open)
 		return
 	if(!tokens && !freeplay)
-		to_chat(user, "\The [src] doesn't have enough credits to play! Pay first!")
+		to_chat(user, "[src] doesn't have enough credits to play! Pay first!")
 		return
 	if(!in_use && (tokens || freeplay))
 		in_use = 1

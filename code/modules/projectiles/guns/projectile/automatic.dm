@@ -28,12 +28,12 @@
 		var/obj/item/ammo_box/magazine/AM = A
 		if(istype(AM, mag_type))
 			if(magazine)
-				to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src], replacing the magazine.</span>")
+				to_chat(user, "<span class='notice'>You perform a tactical reload on [src], replacing the magazine.</span>")
 				magazine.loc = get_turf(loc)
 				magazine.update_icon()
 				magazine = null
 			else
-				to_chat(user, "<span class='notice'>You insert the magazine into \the [src].</span>")
+				to_chat(user, "<span class='notice'>You insert the magazine into [src].</span>")
 			if(alarmed)
 				alarmed = 0
 			user.remove_from_mob(AM)

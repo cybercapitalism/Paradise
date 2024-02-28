@@ -230,20 +230,20 @@
 	var/obj/item/robot_parts/P = tool
 	if(P.part)
 		if(!(target_zone in P.part))
-			to_chat(user, "<span class='warning'>\The [tool] does not go there!</span>")
+			to_chat(user, "<span class='warning'>[tool] does not go there!</span>")
 			return SURGERY_BEGINSTEP_ABORT
 
 	user.visible_message(
-		"[user] starts attaching \the [tool] to [target].",
-		"You start attaching \the [tool] to [target]."
+		"[user] starts attaching [tool] to [target].",
+		"You start attaching [tool] to [target]."
 	)
 	return ..()
 
 /datum/surgery_step/limb/mechanize/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool)
 	var/obj/item/robot_parts/L = tool
 	user.visible_message(
-		"<span class='notice'>[user] has attached \the [tool] to [target].</span>",
-		"<span class='notice'>You have attached \the [tool] to [target].</span>"
+		"<span class='notice'>[user] has attached [tool] to [target].</span>",
+		"<span class='notice'>You have attached [tool] to [target].</span>"
 	)
 
 	if(L.part)

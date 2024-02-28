@@ -52,7 +52,7 @@
 
 /obj/item/mixing_bowl/proc/add_item(obj/item/I, mob/user)
 	if(!user.drop_item())
-		to_chat(user, "<span class='notice'>\The [I] is stuck to your hand, you cannot put it in [src]</span>")
+		to_chat(user, "<span class='notice'>[I] is stuck to your hand, you cannot put it in [src]</span>")
 		//return 0
 	else
 		I.forceMove(src)

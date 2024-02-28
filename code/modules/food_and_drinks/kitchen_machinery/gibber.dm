@@ -268,7 +268,7 @@
 		add_attack_logs(user, occupant, "Gibbed in [src]", !!occupant.ckey ? ATKLOG_FEW : ATKLOG_ALL)
 
 	else //this looks ugly but it's better than a copy-pasted startgibbing proc override
-		occupant.create_attack_log("Was gibbed by <b>an autogibber (\the [src])</b>")
+		occupant.create_attack_log("Was gibbed by <b>an autogibber ([src])</b>")
 		add_attack_logs(src, occupant, "gibbed")
 
 	occupant.emote("scream")
@@ -363,7 +363,7 @@
 		victim_targets += H
 
 	if(victim_targets.len)
-		visible_message({"<span class='danger'>\The [src] states, "Food detected!"</span>"})
+		visible_message({"<span class='danger'>[src] states, "Food detected!"</span>"})
 		sleep(consumption_delay)
 		for(var/mob/living/carbon/H in victim_targets)
 			if(H.loc == lturf) //still standing there
@@ -378,7 +378,7 @@
 
 /obj/machinery/gibber/autogibber/proc/force_move_into_gibber(mob/living/carbon/human/victim)
 	if(!istype(victim))	return 0
-	visible_message("<span class='danger'>\The [victim.name] gets sucked into \the [src]!</span>")
+	visible_message("<span class='danger'>[victim.name] gets sucked into [src]!</span>")
 
 	victim.forceMove(src)
 	occupant = victim
@@ -412,7 +412,7 @@
 		C.throw_at(get_edge_target_turf(src, gib_throw_dir), rand(1, 5), 15)
 		sleep(1)
 
-	visible_message("<span class='warning'>\The [src] spits out \the [H.name]'s possessions!")
+	visible_message("<span class='warning'>[src] spits out [H.name]'s possessions!")
 
 /obj/machinery/gibber/autogibber/proc/cleanbay()
 	var/spats = 0 //keeps track of how many items get spit out. Don't show a message if none are found.
@@ -425,4 +425,4 @@
 			spats++
 			sleep(1)
 	if(spats)
-		visible_message("<span class='warning'>\The [src] spits out more possessions!</span>")
+		visible_message("<span class='warning'>[src] spits out more possessions!</span>")

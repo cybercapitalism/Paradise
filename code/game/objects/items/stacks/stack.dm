@@ -215,13 +215,13 @@
 
 		if(get_amount() < R.req_amount * multiplier)
 			if(R.req_amount * multiplier > 1)
-				to_chat(usr, "<span class='warning'>You haven't got enough [src] to build \the [R.req_amount * multiplier] [R.title]\s!</span>")
+				to_chat(usr, "<span class='warning'>You haven't got enough [src] to build [R.req_amount * multiplier] [R.title]\s!</span>")
 			else
-				to_chat(usr, "<span class='warning'>You haven't got enough [src] to build \the [R.title]!</span>")
+				to_chat(usr, "<span class='warning'>You haven't got enough [src] to build [R.title]!</span>")
 			return FALSE
 
 		if(R.window_checks && !valid_window_location(get_turf(src), usr.dir))
-			to_chat(usr, "<span class='warning'>\The [R.title] won't fit here!</span>")
+			to_chat(usr, "<span class='warning'>[R.title] won't fit here!</span>")
 			return FALSE
 
 		if(R.one_per_turf && (locate(R.result_type) in get_turf(src)))
@@ -229,10 +229,10 @@
 			return FALSE
 
 		if(R.on_floor && !issimulatedturf(get_turf(src)))
-			to_chat(usr, "<span class='warning'>\The [R.title] must be constructed on the floor!</span>")
+			to_chat(usr, "<span class='warning'>[R.title] must be constructed on the floor!</span>")
 			return FALSE
 		if(R.on_floor_or_lattice && !(issimulatedturf(get_turf(src)) || locate(/obj/structure/lattice) in get_turf(src)))
-			to_chat(usr, "<span class='warning'>\The [R.title] must be constructed on the floor or lattice!</span>")
+			to_chat(usr, "<span class='warning'>[R.title] must be constructed on the floor or lattice!</span>")
 			return FALSE
 
 		if(R.cult_structure)

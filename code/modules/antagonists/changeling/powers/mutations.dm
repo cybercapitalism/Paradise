@@ -97,10 +97,10 @@
 
 /datum/action/changeling/suit/sting_action(mob/living/carbon/human/user)
 	if(!user.unEquip(user.wear_suit))
-		to_chat(user, "\the [user.wear_suit] is stuck to your body, you cannot grow a [suit_name_simple] over it!")
+		to_chat(user, "[user.wear_suit] is stuck to your body, you cannot grow a [suit_name_simple] over it!")
 		return FALSE
 	if(!user.unEquip(user.head))
-		to_chat(user, "\the [user.head] is stuck on your head, you cannot grow a [helmet_name_simple] over it!")
+		to_chat(user, "[user.head] is stuck on your head, you cannot grow a [helmet_name_simple] over it!")
 		return FALSE
 
 	user.unEquip(user.head)
@@ -560,8 +560,8 @@
 		return FALSE
 
 	user.visible_message(
-		"<span class='warning'>\The [name] turns to shreds as [user] cleaves through it!</span>",
-		"<span class='warning'>\The [name] turns to shreds as you cleave through it!</span>",
+		"<span class='warning'>[name] turns to shreds as [user] cleaves through it!</span>",
+		"<span class='warning'>[name] turns to shreds as you cleave through it!</span>",
 		"<span class='notice'>You hear something fall as the grinding ends.</span>"
 	)
 

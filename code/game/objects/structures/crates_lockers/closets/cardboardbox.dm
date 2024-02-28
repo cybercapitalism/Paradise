@@ -74,7 +74,7 @@
 			var/obj/item/wirecutters/WC = W
 			new /obj/item/stack/sheet/cardboard(src.loc, amt)
 			for(var/mob/M in viewers(src))
-				M.show_message("<span class='notice'>\The [src] has been cut apart by [user] with \the [WC].</span>", 3, "You hear cutting.", 2)
+				M.show_message("<span class='notice'>[src] has been cut apart by [user] with [WC].</span>", 3, "You hear cutting.", 2)
 			qdel(src)
 			return
 		if(is_pen(W))

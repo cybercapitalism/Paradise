@@ -127,7 +127,7 @@
 
 /obj/item/rcl/proc/trigger(mob/user)
 	if(is_empty(user, 0))
-		to_chat(user, "<span class='warning'>\The [src] is empty!</span>")
+		to_chat(user, "<span class='warning'>[src] is empty!</span>")
 		return
 	if(last)
 		if(get_dist(last, user) == 1) //hacky, but it works

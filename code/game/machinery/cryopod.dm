@@ -565,7 +565,7 @@
 		if(do_after(user, 20, target = L))
 			if(!L) return TRUE
 			if(occupant)
-				to_chat(user, "<span class='boldnotice'>\The [src] is in use.</span>")
+				to_chat(user, "<span class='boldnotice'>[src] is in use.</span>")
 				return TRUE
 			take_occupant(L, willing)
 		else

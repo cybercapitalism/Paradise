@@ -87,10 +87,10 @@
 	switch(build)
 		if(0) // Loose frame
 			if(istype(W, /obj/item/wrench))
-				to_chat(user, "You begin to anchor \the [src] on the floor.")
+				to_chat(user, "You begin to anchor [src] on the floor.")
 				playsound(get_turf(src), W.usesound, 50, 1)
 				if(do_after(user, 10 * W.toolspeed, target = src) && (build == 0))
-					to_chat(user, "<span class='notice'>You anchor \the [src]!</span>")
+					to_chat(user, "<span class='notice'>You anchor [src]!</span>")
 					anchored = TRUE
 					build++
 				return TRUE
@@ -98,44 +98,44 @@
 
 		if(1) // Fixed to the floor
 			if(istype(W, /obj/item/wrench))
-				to_chat(user, "You begin to de-anchor \the [src] from the floor.")
+				to_chat(user, "You begin to de-anchor [src] from the floor.")
 				playsound(get_turf(src), W.usesound, 50, 1)
 				if(do_after(user, 10 * W.toolspeed, target = src) && (build == 1))
 					build--
 					anchored = FALSE
-					to_chat(user, "<span class='notice'>You de-anchored \the [src]!</span>")
+					to_chat(user, "<span class='notice'>You de-anchored [src]!</span>")
 				return TRUE
 			return FALSE
 
 		if(2) // Welded to the floor
 			if(istype(W, /obj/item/stack/cable_coil))
 				var/obj/item/stack/cable_coil/C = W
-				to_chat(user, "You start adding cables to \the [src]...")
+				to_chat(user, "You start adding cables to [src]...")
 				playsound(get_turf(src), C.usesound, 50, 1)
 				if(do_after(user, 20 * C.toolspeed, target = src) && (C.get_amount() >= 2) && (build == 2))
 					C.use(2)
-					to_chat(user, "<span class='notice'>You've added cables to \the [src].</span>")
+					to_chat(user, "<span class='notice'>You've added cables to [src].</span>")
 					build++
 				return TRUE
 			return FALSE
 
 		if(3) // Wired
 			if(istype(W, /obj/item/wirecutters))
-				to_chat(user, "You begin to remove the wiring from \the [src].")
+				to_chat(user, "You begin to remove the wiring from [src].")
 				if(do_after(user, 10 * W.toolspeed, target = src) && (build == 3))
 					new /obj/item/stack/cable_coil(loc,2)
 					playsound(get_turf(src), W.usesound, 50, 1)
-					to_chat(user, "<span class='notice'>You've removed the cables from \the [src].</span>")
+					to_chat(user, "<span class='notice'>You've removed the cables from [src].</span>")
 					build--
 				return TRUE
 
 			if(istype(W, /obj/item/stack/rods))
 				var/obj/item/stack/rods/R = W
-				to_chat(user, "You begin to complete \the [src]...")
+				to_chat(user, "You begin to complete [src]...")
 				playsound(get_turf(src), R.usesound, 50, 1)
 				if(do_after(user, 20 * R.toolspeed, target = src) && (R.get_amount() >= 2) && (build == 3))
 					R.use(2)
-					to_chat(user, "<span class='notice'>You've added the grille to \the [src].</span>")
+					to_chat(user, "<span class='notice'>You've added the grille to [src].</span>")
 					build++
 				return TRUE
 
@@ -143,7 +143,7 @@
 
 		if(4) // Grille in place
 			if(istype(W, /obj/item/crowbar))
-				to_chat(user, "You begin to pry off the grille from \the [src]...")
+				to_chat(user, "You begin to pry off the grille from [src]...")
 				playsound(get_turf(src), W.usesound, 50, 1)
 				if(do_after(user, 30 * W.toolspeed, target = src) && (build == 4))
 					new /obj/item/stack/rods(loc,2)

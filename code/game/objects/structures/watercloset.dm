@@ -329,7 +329,7 @@
 				current_temperature = SHOWER_BOILING
 			if(SHOWER_BOILING)
 				current_temperature = SHOWER_NORMAL
-		user.visible_message("<span class='notice'>[user] adjusts the shower with \the [I].</span>", "<span class='notice'>You adjust the shower with \the [I] to [current_temperature] temperature.</span>")
+		user.visible_message("<span class='notice'>[user] adjusts the shower with [I].</span>", "<span class='notice'>You adjust the shower with [I] to [current_temperature] temperature.</span>")
 		add_hiddenprint(user)
 	handle_mist()
 	return TRUE
@@ -648,7 +648,7 @@
 	if(proximity_flag != 1) //if we aren't next to the wall
 		return
 	if(!(get_dir(on_wall, user) in GLOB.cardinal))
-		to_chat(user, "<span class='warning'>You need to be standing next to a wall to place \the [src].</span>")
+		to_chat(user, "<span class='warning'>You need to be standing next to a wall to place [src].</span>")
 		return
 	return 1
 

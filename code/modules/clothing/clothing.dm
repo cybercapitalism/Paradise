@@ -55,7 +55,7 @@
 
 	visor_toggling()
 
-	to_chat(user, "<span class='notice'>You adjust \the [src] [up ? "up" : "down"].</span>")
+	to_chat(user, "<span class='notice'>You adjust [src] [up ? "up" : "down"].</span>")
 
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
@@ -238,13 +238,13 @@
 	if(user.stat || HAS_TRAIT(user, TRAIT_HANDS_BLOCKED) || !Adjacent(user) || !istype(user))
 		return
 
-	var/action_fluff = "You adjust \the [src]"
+	var/action_fluff = "You adjust [src]"
 	if(user.glasses == src)
 		if(!user.canUnEquip(src))
 			to_chat(user, "<span class='warning'>[src] is stuck to you!</span>")
 			return
 		if(attack_hand(user)) //Remove the glasses for this action. Prevents logic-defying instances where glasses phase through your mask as it ascends/descends to another plane of existence.
-			action_fluff = "You remove \the [src] and adjust it"
+			action_fluff = "You remove [src] and adjust it"
 
 	over_mask = !over_mask
 	to_chat(user, "<span class='notice'>[action_fluff] to be worn [over_mask ? "over" : "under"] a mask.</span>")
@@ -399,7 +399,7 @@
 	if(!up)
 		gas_transfer_coefficient = initial(gas_transfer_coefficient)
 		permeability_coefficient = initial(permeability_coefficient)
-		to_chat(user, "<span class='notice'>You push \the [src] back into place.</span>")
+		to_chat(user, "<span class='notice'>You push [src] back into place.</span>")
 		slot_flags = initial(slot_flags)
 		if(flags_inv != initial(flags_inv))
 			if(initial(flags_inv) & HIDEFACE) //If the mask is one that hides the face and can be adjusted yet lost that trait when it was adjusted, make it hide the face again.
@@ -421,7 +421,7 @@
 					user.unEquip(src)
 					user.put_in_hands(src)
 	else
-		to_chat(user, "<span class='notice'>You push \the [src] out of the way.</span>")
+		to_chat(user, "<span class='notice'>You push [src] out of the way.</span>")
 		gas_transfer_coefficient = null
 		permeability_coefficient = null
 		if(adjusted_flags)
@@ -577,7 +577,7 @@
 //Proc that opens and closes jackets.
 /obj/item/clothing/suit/proc/adjustsuit(mob/user)
 	if(ignore_suitadjust)
-		to_chat(user, "<span class='notice'>You attempt to button up the velcro on \the [src], before promptly realising how foolish you are.</span>")
+		to_chat(user, "<span class='notice'>You attempt to button up the velcro on [src], before promptly realising how foolish you are.</span>")
 		return
 	if(user.incapacitated())
 		return
@@ -598,7 +598,7 @@
 			user.update_inv_wear_suit()
 			return
 		else
-			to_chat(user, "<span class='warning'>You yank and pull at \the [src] with your [pick("excessive", "extreme", "insane", "monstrous", "ridiculous", "unreal", "stupendous")] [pick("power", "strength")], however you are unable to change its state!</span>")//Yep, that's all they get. Avoids having to snowflake in a cooldown.
+			to_chat(user, "<span class='warning'>You yank and pull at [src] with your [pick("excessive", "extreme", "insane", "monstrous", "ridiculous", "unreal", "stupendous")] [pick("power", "strength")], however you are unable to change its state!</span>")//Yep, that's all they get. Avoids having to snowflake in a cooldown.
 			return
 
 	if(suit_adjusted)
@@ -607,7 +607,7 @@
 		item_state = copytext(item_state, 1, findtext(item_state, "_open"))
 		if(adjust_flavour)
 			flavour = "[copytext(adjust_flavour, 3, length(adjust_flavour) + 1)] up" //Trims off the 'un' at the beginning of the word. unzip -> zip, unbutton->button.
-		to_chat(user, "You [flavour] \the [src].")
+		to_chat(user, "You [flavour] [src].")
 		for(var/X in actions)
 			var/datum/action/A = X
 			A.UpdateButtonIcon()
@@ -617,7 +617,7 @@
 		item_state += "_open"
 		if(adjust_flavour)
 			flavour = "[adjust_flavour]"
-		to_chat(user, "You [flavour] \the [src].")
+		to_chat(user, "You [flavour] [src].")
 		for(var/X in actions)
 			var/datum/action/A = X
 			A.UpdateButtonIcon()

@@ -35,7 +35,7 @@
 					"<span class='italics'>You hear squelching...</span>")
 				if(!do_after(M, 120 SECONDS, target = src))
 					if(M && M.buckled)
-						to_chat(M, "<span class='warning'>You fail to escape \the [src]!</span>")
+						to_chat(M, "<span class='warning'>You fail to escape [src]!</span>")
 					return
 				if(!M.buckled)
 					return

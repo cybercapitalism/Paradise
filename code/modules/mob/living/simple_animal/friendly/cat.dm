@@ -138,7 +138,7 @@
 	if(eats_mice && isturf(loc) && !incapacitated())
 		for(var/mob/living/simple_animal/mouse/M in view(1, src))
 			if(!M.stat && Adjacent(M))
-				custom_emote(EMOTE_VISIBLE, "splats \the [M]!")
+				custom_emote(EMOTE_VISIBLE, "splats [M]!")
 				M.death()
 				M.splat()
 				movement_target = null
@@ -146,7 +146,7 @@
 				break
 		for(var/obj/item/toy/cattoy/T in view(1, src))
 			if(T.cooldown < (world.time - 400))
-				custom_emote(EMOTE_VISIBLE, "bats \the [T] around with its paw!")
+				custom_emote(EMOTE_VISIBLE, "bats [T] around with its paw!")
 				T.cooldown = world.time
 
 /mob/living/simple_animal/pet/cat/handle_automated_movement()

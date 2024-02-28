@@ -72,7 +72,7 @@
 	if(istype(H))
 		H.update_inv_head()
 		if(!update_light)
-			to_chat(user, "<span class='notice'>You turn \the [src]'s torch [on ? "on":"off"].</span>")
+			to_chat(user, "<span class='notice'>You turn [src]'s torch [on ? "on":"off"].</span>")
 		if(on && !up)
 			to_chat(user, "<span class='notice'>[src]'s torch can't pass through your welding visor!</span>")
 

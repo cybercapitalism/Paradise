@@ -70,15 +70,15 @@
 		take_overall_damage(0, shock_damage, TRUE, used_weapon = "Electrocution")
 		if(shock_damage > 200)
 			visible_message(
-				"<span class='danger'>[src] was arc flashed by \the [source]!</span>",
-				"<span class='userdanger'>\The [source] arc flashes and electrocutes you!</span>",
+				"<span class='danger'>[src] was arc flashed by [source]!</span>",
+				"<span class='userdanger'>[source] arc flashes and electrocutes you!</span>",
 				"<span class='italics'>You hear a lightning-like crack!</span>")
 			playsound(loc, 'sound/effects/eleczap.ogg', 50, 1, -1)
 			explosion(loc, -1, 0, 2, 2)
 	else
 		apply_damage(shock_damage, STAMINA)
 	visible_message(
-		"<span class='danger'>[src] was shocked by \the [source]!</span>", \
+		"<span class='danger'>[src] was shocked by [source]!</span>", \
 		"<span class='userdanger'>You feel a powerful shock coursing through your body!</span>", \
 		"<span class='hear'>You hear a heavy electrical crack.</span>" \
 	)
@@ -317,7 +317,7 @@
 	if(stat != DEAD)
 		add_attack_logs(M, src, "Slime'd")
 		M.do_attack_animation(src)
-		visible_message("<span class='danger'>\The [M.name] glomps [src]!</span>", "<span class='userdanger'>\The [M.name] glomps you!</span>")
+		visible_message("<span class='danger'>[M.name] glomps [src]!</span>", "<span class='userdanger'>[M.name] glomps you!</span>")
 		return TRUE
 
 /mob/living/attack_animal(mob/living/simple_animal/M)
@@ -332,8 +332,8 @@
 	if(M.attack_sound)
 		playsound(loc, M.attack_sound, 50, 1, 1)
 	M.do_attack_animation(src)
-	visible_message("<span class='danger'>\The [M] [M.attacktext] [src]!</span>", \
-					"<span class='userdanger'>\The [M] [M.attacktext] [src]!</span>")
+	visible_message("<span class='danger'>[M] [M.attacktext] [src]!</span>", \
+					"<span class='userdanger'>[M] [M.attacktext] [src]!</span>")
 	add_attack_logs(M, src, "Animal attacked")
 	return TRUE
 

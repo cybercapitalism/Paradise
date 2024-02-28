@@ -582,7 +582,7 @@
 				continue
 			if(mito_trans >= MITO_REVIVAL_COST)
 				I.rejuvenate() // Just like splashing it onto it
-				user.visible_message("<span class='warning'>\The [I] seems to regain its lively luster!</span>")
+				user.visible_message("<span class='warning'>[I] seems to regain its lively luster!</span>")
 			else
 				to_chat(user, "<span class='warning'>[I] does not seem to respond to the amount of mitocholide inside the injection. Try injecting more next time.</span>")
 
@@ -824,8 +824,8 @@
 /datum/surgery_step/generic/seal_carapace/begin_step(mob/living/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/zone = zone_name(target_zone)
 	user.visible_message(
-		"[user] is beginning to cauterize the incision on [target]'s [zone] with \the [tool].",
-		"You are beginning to cauterize the incision on [target]'s [zone] with \the [tool]."
+		"[user] is beginning to cauterize the incision on [target]'s [zone] with [tool].",
+		"You are beginning to cauterize the incision on [target]'s [zone] with [tool]."
 	)
 	to_chat(user, "<span class='userdanger'>Your [zone] is being burned!</span>") // No custom pain because xenos are special
 	return ..()
@@ -833,16 +833,16 @@
 /datum/surgery_step/generic/seal_carapace/end_step(mob/living/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/zone = zone_name(target_zone)
 	user.visible_message(
-		"<span class='notice'>[user] cauterizes the incision on [target]'s [zone] with \the [tool].</span>",
-		"<span class='notice'>You cauterize the incision on [target]'s [zone] with \the [tool].</span>"
+		"<span class='notice'>[user] cauterizes the incision on [target]'s [zone] with [tool].</span>",
+		"<span class='notice'>You cauterize the incision on [target]'s [zone] with [tool].</span>"
 	)
 	return SURGERY_STEP_CONTINUE
 
 /datum/surgery_step/generic/seal_carapace/fail_step(mob/living/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/zone = zone_name(target_zone)
 	user.visible_message(
-		"<span class='warning'>[user]'s hand slips, leaving a small burn on [target]'s [zone] with \the [tool]!</span>",
-		"<span class='warning'>Your hand slips, leaving a small burn on [target]'s [zone] with \the [tool]!</span>"
+		"<span class='warning'>[user]'s hand slips, leaving a small burn on [target]'s [zone] with [tool]!</span>",
+		"<span class='warning'>Your hand slips, leaving a small burn on [target]'s [zone] with [tool]!</span>"
 	)
 	target.apply_damage(3, BURN, target_zone)
 	return SURGERY_STEP_RETRY

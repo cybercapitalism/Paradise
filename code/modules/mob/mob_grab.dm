@@ -456,7 +456,7 @@
 				to_chat(user, "<span class='warning'>[affecting] is buckled!</span>")
 				return
 
-			user.visible_message("<span class='danger'>[user] is attempting to devour \the [affecting]!</span>")
+			user.visible_message("<span class='danger'>[user] is attempting to devour [affecting]!</span>")
 
 			if(!do_after(user, checktime(user, affecting), target = affecting)) return
 
@@ -464,7 +464,7 @@
 				to_chat(user, "<span class='warning'>[affecting] is buckled!</span>")
 				return
 
-			user.visible_message("<span class='danger'>[user] devours \the [affecting]!</span>")
+			user.visible_message("<span class='danger'>[user] devours [affecting]!</span>")
 			if(affecting.mind)
 				add_attack_logs(attacker, affecting, "Devoured")
 			if(istype(affecting, /mob/living/simple_animal/hostile/poison/bees)) //Eating a bee will end up damaging you

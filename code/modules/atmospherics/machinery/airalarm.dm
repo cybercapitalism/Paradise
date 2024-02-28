@@ -336,7 +336,7 @@
 				return
 			if(!regulating_temperature && thermostat_state)
 				regulating_temperature = TRUE
-				visible_message("\The [src] clicks as it starts [environment.temperature > target_temperature ? "cooling" : "heating"] the room.", "You hear a click and a faint electronic hum.")
+				visible_message("[src] clicks as it starts [environment.temperature > target_temperature ? "cooling" : "heating"] the room.", "You hear a click and a faint electronic hum.")
 
 			if(target_temperature > MAX_TEMPERATURE)
 				target_temperature = MAX_TEMPERATURE
@@ -812,7 +812,7 @@
 		return UI_CLOSE
 
 	if(aidisabled && (isAI(user) || isrobot(user)))
-		to_chat(user, "<span class='warning'>AI control for \the [src] interface has been disabled.</span>")
+		to_chat(user, "<span class='warning'>AI control for [src] interface has been disabled.</span>")
 		return UI_CLOSE
 
 	. = shorted ? UI_DISABLED : UI_INTERACTIVE
@@ -998,7 +998,7 @@
 	if(!emagged)
 		emagged = TRUE
 		if(user)
-			user.visible_message("<span class='warning'>Sparks fly out of \the [src]!</span>", "<span class='notice'>You emag \the [src], disabling its safeties.</span>")
+			user.visible_message("<span class='warning'>Sparks fly out of [src]!</span>", "<span class='notice'>You emag [src], disabling its safeties.</span>")
 		playsound(src.loc, 'sound/effects/sparks4.ogg', 50, TRUE)
 		return TRUE
 

@@ -513,7 +513,7 @@
 		var/mob/living/silicon/robot/robot = user
 		if(aidisabled || (malfhack && istype(malfai) && ((istype(AI) && (malfai != AI && malfai != AI.parent))) || (istype(robot) && malfai && !(robot in malfai.connected_robots))))
 			if(!loud)
-				to_chat(user, "<span class='danger'>\The [src] has AI control disabled!</span>")
+				to_chat(user, "<span class='danger'>[src] has AI control disabled!</span>")
 			return FALSE
 	else
 		if((!in_range(src, user) || !isturf(loc)))

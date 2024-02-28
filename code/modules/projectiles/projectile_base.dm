@@ -190,7 +190,7 @@
 			new impact_effect_type(target_loca, hitx, hity)
 		var/organ_hit_text = ""
 		if(L.has_limbs)
-			organ_hit_text = " in \the [parse_zone(def_zone)]"
+			organ_hit_text = " in [parse_zone(def_zone)]"
 		if(suppressed)
 			playsound(loc, hitsound, 5, 1, -1)
 			to_chat(L, "<span class='userdanger'>You're shot by \a [src][organ_hit_text]!</span>")

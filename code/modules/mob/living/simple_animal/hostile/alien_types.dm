@@ -157,7 +157,7 @@
 	if(ishuman(target))
 		var/atom/movable/H = target
 		H.clean_blood()
-		visible_message("<span class='notice'>\The [src] polishes \the [target].</span>")
+		visible_message("<span class='notice'>[src] polishes [target].</span>")
 		return TRUE
 	target.cleaning_act(src, src, cleanspeed, text_description = ".") //LXM is both the user and the cleaning implement itself. Wow!
 

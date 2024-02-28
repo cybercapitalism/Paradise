@@ -297,7 +297,7 @@
 		else
 			message_admins("\[EXPLOIT] [key_name_admin(user)] attempted to place pipes with a BRPD via a camera console. (Attempted range exploit)")
 			playsound(src, 'sound/machines/synth_no.ogg', 15, TRUE)
-			to_chat(user, "<span class='notice'>ERROR: \The [T] is out of [src]'s range!</span>")
+			to_chat(user, "<span class='notice'>ERROR: [T] is out of [src]'s range!</span>")
 			return
 
 	T.rpd_act(user, src)

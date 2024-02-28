@@ -334,7 +334,7 @@
 			to_chat(user, "<span class='notice'>It won't budge.</span>")
 			return
 
-		user.visible_message("<span class='warning'>[user] flips \the [src]!</span>")
+		user.visible_message("<span class='warning'>[user] flips [src]!</span>")
 
 		if(climbable)
 			structure_shaken()

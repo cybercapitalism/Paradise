@@ -350,8 +350,8 @@
 	item_state = "electronic"
 
 /obj/item/mining_drone_cube/attack_self(mob/user)
-	user.visible_message("<span class='warning'>\The [src] suddenly expands into a fully functional mining drone!</span>", \
-	"<span class='warning'>You press center button on \the [src]. The device suddenly expands into a fully functional mining drone!</span>")
+	user.visible_message("<span class='warning'>[src] suddenly expands into a fully functional mining drone!</span>", \
+	"<span class='warning'>You press center button on [src]. The device suddenly expands into a fully functional mining drone!</span>")
 	new /mob/living/simple_animal/hostile/mining_drone(get_turf(src))
 	qdel(src)
 

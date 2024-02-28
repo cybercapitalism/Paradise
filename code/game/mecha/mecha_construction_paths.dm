@@ -1585,7 +1585,7 @@
 				holder.icon_state = "phazon21"
 		if(1)
 			if(diff==FORWARD)
-				user.visible_message("[user] carefully inserts the anomaly core into \the [holder] and secures it.", "You slowly place the anomaly core into its socket and close its chamber.")
+				user.visible_message("[user] carefully inserts the anomaly core into [holder] and secures it.", "You slowly place the anomaly core into its socket and close its chamber.")
 				qdel(used_atom)
 	return 1
 

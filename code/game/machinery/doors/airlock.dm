@@ -988,8 +988,8 @@ GLOBAL_LIST_EMPTY(airlock_emissive_underlays)
 					if(do_after(user, 20, 1, target = src))
 						if(!panel_open || !S.use(2))
 							return
-						user.visible_message("<span class='notice'>[user] reinforces \the [src] with metal.</span>",
-											"<span class='notice'>You reinforce \the [src] with metal.</span>")
+						user.visible_message("<span class='notice'>[user] reinforces [src] with metal.</span>",
+											"<span class='notice'>You reinforce [src] with metal.</span>")
 						security_level = AIRLOCK_SECURITY_METAL
 						update_icon()
 					return
@@ -1002,8 +1002,8 @@ GLOBAL_LIST_EMPTY(airlock_emissive_underlays)
 					if(do_after(user, 20, 1, target = src))
 						if(!panel_open || !S.use(2))
 							return
-						user.visible_message("<span class='notice'>[user] reinforces \the [src] with plasteel.</span>",
-											"<span class='notice'>You reinforce \the [src] with plasteel.</span>")
+						user.visible_message("<span class='notice'>[user] reinforces [src] with plasteel.</span>",
+											"<span class='notice'>You reinforce [src] with plasteel.</span>")
 						security_level = AIRLOCK_SECURITY_PLASTEEL
 						modify_max_integrity(normal_integrity * AIRLOCK_INTEGRITY_MULTIPLIER)
 						damage_deflection = AIRLOCK_DAMAGE_DEFLECTION_R
@@ -1056,8 +1056,8 @@ GLOBAL_LIST_EMPTY(airlock_emissive_underlays)
 		if(I.use_tool(src, user, 40, volume = I.tool_volume))
 			if(!panel_open || security_level != AIRLOCK_SECURITY_PLASTEEL_I_S)
 				return
-			user.visible_message("<span class='notice'>[user] removes \the [src]'s shielding.</span>",
-								"<span class='notice'>You remove \the [src]'s inner shielding.</span>")
+			user.visible_message("<span class='notice'>[user] removes [src]'s shielding.</span>",
+								"<span class='notice'>You remove [src]'s inner shielding.</span>")
 			security_level = AIRLOCK_SECURITY_NONE
 			modify_max_integrity(normal_integrity)
 			damage_deflection = AIRLOCK_DAMAGE_DEFLECTION_N
@@ -1068,8 +1068,8 @@ GLOBAL_LIST_EMPTY(airlock_emissive_underlays)
 		if(I.use_tool(src, user, 40, volume = I.tool_volume))
 			if(!panel_open || security_level != AIRLOCK_SECURITY_PLASTEEL_O_S)
 				return
-			user.visible_message("<span class='notice'>[user] removes \the [src]'s shielding.</span>",
-								"<span class='notice'>You remove \the [src]'s shielding.</span>")
+			user.visible_message("<span class='notice'>[user] removes [src]'s shielding.</span>",
+								"<span class='notice'>You remove [src]'s shielding.</span>")
 			security_level = AIRLOCK_SECURITY_PLASTEEL_I
 			spawn_atom_to_turf(/obj/item/stack/sheet/plasteel, user.loc, 1)
 	else
@@ -1095,8 +1095,8 @@ GLOBAL_LIST_EMPTY(airlock_emissive_underlays)
 		if(I.use_tool(src, user, 10, volume = I.tool_volume))
 			if(!panel_open || security_level != AIRLOCK_SECURITY_PLASTEEL)
 				return
-			user.visible_message("<span class='notice'>[user] cut through \the [src]'s outer grille.</span>",
-								"<span class='notice'>You cut through \the [src]'s outer grille.</span>")
+			user.visible_message("<span class='notice'>[user] cut through [src]'s outer grille.</span>",
+								"<span class='notice'>You cut through [src]'s outer grille.</span>")
 			security_level = AIRLOCK_SECURITY_PLASTEEL_O
 		return
 	interact_with_panel(user)
@@ -1121,8 +1121,8 @@ GLOBAL_LIST_EMPTY(airlock_emissive_underlays)
 				to_chat(user, "<span class='notice'>You begin cutting the panel's shielding...</span>")
 				if(!I.use_tool(src, user, 40, volume = I.tool_volume))
 					return
-				visible_message("<span class='notice'>[user] cuts through \the [src]'s shielding.</span>",
-					"<span class='notice'>You cut through \the [src]'s shielding.</span>",
+				visible_message("<span class='notice'>[user] cuts through [src]'s shielding.</span>",
+					"<span class='notice'>You cut through [src]'s shielding.</span>",
 					"<span class='italics'>You hear welding.</span>")
 				security_level = AIRLOCK_SECURITY_NONE
 				spawn_atom_to_turf(/obj/item/stack/sheet/metal, user.loc, 2)
@@ -1130,16 +1130,16 @@ GLOBAL_LIST_EMPTY(airlock_emissive_underlays)
 				to_chat(user, "<span class='notice'>You begin cutting the outer layer of shielding...</span>")
 				if(!I.use_tool(src, user, 40, volume = I.tool_volume))
 					return
-				visible_message("<span class='notice'>[user] cuts through \the [src]'s shielding.</span>",
-					"<span class='notice'>You cut through \the [src]'s shielding.</span>",
+				visible_message("<span class='notice'>[user] cuts through [src]'s shielding.</span>",
+					"<span class='notice'>You cut through [src]'s shielding.</span>",
 					"<span class='italics'>You hear welding.</span>")
 				security_level = AIRLOCK_SECURITY_PLASTEEL_O_S
 			if(AIRLOCK_SECURITY_PLASTEEL_I)
 				to_chat(user, "<span class='notice'>You begin cutting the inner layer of shielding...</span>")
 				if(!I.use_tool(src, user, 40, volume = I.tool_volume))
 					return
-				user.visible_message("<span class='notice'>[user] cuts through \the [src]'s shielding.</span>",
-					"<span class='notice'>You cut through \the [src]'s shielding.</span>",
+				user.visible_message("<span class='notice'>[user] cuts through [src]'s shielding.</span>",
+					"<span class='notice'>You cut through [src]'s shielding.</span>",
 					"<span class='italics'>You hear welding.</span>")
 				security_level = AIRLOCK_SECURITY_PLASTEEL_I_S
 	else

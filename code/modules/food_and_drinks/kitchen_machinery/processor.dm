@@ -158,7 +158,7 @@
 	if(O.client) //grief-proof
 		O.loc = loc
 		O.visible_message("<span class='notice'>Suddenly [O] jumps out from the processor!</span>", \
-				"<span class='notice'>You jump out of \the [src].</span>", \
+				"<span class='notice'>You jump out of [src].</span>", \
 				"<span class='notice'>You hear a chimp.</span>")
 		return
 	var/obj/item/reagent_containers/glass/bucket/bucket_of_blood = new(loc)
@@ -190,7 +190,7 @@
 /obj/machinery/processor/attackby(obj/item/O, mob/user, params)
 
 	if(processing)
-		to_chat(user, "<span class='warning'>\the [src] is already processing something!</span>")
+		to_chat(user, "<span class='warning'>[src] is already processing something!</span>")
 		return 1
 
 	if(default_deconstruction_screwdriver(user, "processor_open", "processor", O))
@@ -216,8 +216,8 @@
 		to_chat(user, "<span class='warning'>That probably won't blend.</span>")
 		return 1
 
-	user.visible_message("<span class='notice'>\the [user] puts \the [what] into \the [src].</span>", \
-		"<span class='notice'>You put \the [what] into \the [src].")
+	user.visible_message("<span class='notice'>[user] puts [what] into [src].</span>", \
+		"<span class='notice'>You put [what] into [src].")
 
 	user.drop_item()
 
@@ -229,11 +229,11 @@
 		return
 
 	if(processing)
-		to_chat(user, "<span class='warning'>\the [src] is already processing something!</span>")
+		to_chat(user, "<span class='warning'>[src] is already processing something!</span>")
 		return 1
 
 	if(contents.len == 0)
-		to_chat(user, "<span class='warning'>\the [src] is empty.</span>")
+		to_chat(user, "<span class='warning'>[src] is empty.</span>")
 		return 1
 	processing = TRUE
 	update_icon(UPDATE_ICON_STATE)
@@ -260,6 +260,6 @@
 	processing = FALSE
 	update_icon(UPDATE_ICON_STATE)
 
-	visible_message("<span class='notice'>\the [src] has finished processing.</span>", \
-		"<span class='notice'>\the [src] has finished processing.</span>", \
+	visible_message("<span class='notice'>[src] has finished processing.</span>", \
+		"<span class='notice'>[src] has finished processing.</span>", \
 		"<span class='notice'>You hear a food processor stopping.</span>")

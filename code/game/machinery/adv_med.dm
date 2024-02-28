@@ -399,7 +399,7 @@
 				t1 = "Unconscious"
 			else
 				t1 = "*Dead*"
-		dat += "[occupant.health > 50 ? "<font color='blue'>" : "<font color='red'>"]\tHealth: [occupant.health]% ([t1])</font><br>"
+		dat += "[occupant.health > 50 ? "<font color='blue'>" : "<font color='red'>"]lth: [occupant.health]% ([t1])</font><br>"
 
 		var/extra_font = null
 

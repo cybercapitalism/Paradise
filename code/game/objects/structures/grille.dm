@@ -176,7 +176,7 @@
 	if(!support)
 		support = get_turf(src)
 	user.visible_message("<span class='notice'>[user] [anchored ? "fastens" : "unfastens"] [src].</span>", \
-							"<span class='notice'>You [anchored ? "fasten [src] to" : "unfasten [src] from"] \the [support].</span>")
+							"<span class='notice'>You [anchored ? "fasten [src] to" : "unfasten [src] from"] [support].</span>")
 
 /obj/structure/grille/proc/build_window(obj/item/stack/sheet/S, mob/user)
 	var/dir_to_set = SOUTHWEST

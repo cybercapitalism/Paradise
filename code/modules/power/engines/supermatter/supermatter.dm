@@ -378,7 +378,7 @@
 			if(atoms_share_level(M, src))
 				to_chat(M, "<span class='boldannounceic'>You feel reality distort for a moment...</span>")
 			else
-				to_chat(M, "<span class='boldannounceic'>You hold onto \the [M.loc] as hard as you can, as reality distorts around you. You feel safe.</span>")
+				to_chat(M, "<span class='boldannounceic'>You hold onto [M.loc] as hard as you can, as reality distorts around you. You feel safe.</span>")
 
 	if(combined_gas > MOLE_CRUNCH_THRESHOLD)
 		investigate_log("has collapsed into a singularity.", "supermatter")

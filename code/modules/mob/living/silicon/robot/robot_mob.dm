@@ -776,7 +776,7 @@ GLOBAL_LIST_INIT(robot_verbs_default, list(
 		updatehealth()
 		add_fingerprint(user)
 		coil.use(1)
-		user.visible_message("<span class='alert'>\The [user] fixes some of the burnt wires on \the [src] with \the [coil].</span>")
+		user.visible_message("<span class='alert'>[user] fixes some of the burnt wires on [src] with [coil].</span>")
 
 	else if(istype(W, /obj/item/stock_parts/cell) && opened)	// trying to put a cell inside
 		var/datum/robot_component/cell/C = components["power cell"]
@@ -951,7 +951,7 @@ GLOBAL_LIST_INIT(robot_verbs_default, list(
 	if(!I.use_tool(src, user, 0, volume = I.tool_volume))
 		return
 	var/obj/item/robot_parts/robot_component/thing = C.wrapped
-	to_chat(user, "You remove \the [thing].")
+	to_chat(user, "You remove [thing].")
 	if(istype(thing))
 		thing.brute = C.brute_damage
 		thing.burn = C.electronics_damage

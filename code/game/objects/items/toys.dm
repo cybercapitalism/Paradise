@@ -216,7 +216,7 @@
 			if(ishuman(user))
 				user.adjustBrainLoss(10)
 		else if((W.flags & NODROP) || (flags & NODROP))
-			to_chat(user, "<span class='notice'>\the [flags & NODROP ? src : W] is stuck to your hand, you can't attach it to \the [flags & NODROP ? W : src]!</span>")
+			to_chat(user, "<span class='notice'>[flags & NODROP ? src : W] is stuck to your hand, you can't attach it to [flags & NODROP ? W : src]!</span>")
 		else
 			to_chat(user, "<span class='notice'>You attach the ends of the two plastic swords, making a single double-bladed toy! You're fake-cool.</span>")
 			new /obj/item/dualsaber/toy(user.loc)
@@ -280,7 +280,7 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
 /obj/item/toy/katana/suicide_act(mob/user)
-	var/dmsg = pick("[user] tries to stab \the [src] into [user.p_their()] abdomen, but it shatters! [user.p_they(TRUE)] look[user.p_s()] as if [user.p_they()] might die from the shame.","[user] tries to stab \the [src] into [user.p_their()] abdomen, but \the [src] bends and breaks in half! [user.p_they(TRUE)] look[user.p_s()] as if [user.p_they()] might die from the shame.","[user] tries to slice [user.p_their()] own throat, but the plastic blade has no sharpness, causing [user.p_them()] to lose [user.p_their()] balance, slip over, and break [user.p_their()] neck with a loud snap!")
+	var/dmsg = pick("[user] tries to stab [src] into [user.p_their()] abdomen, but it shatters! [user.p_they(TRUE)] look[user.p_s()] as if [user.p_they()] might die from the shame.","[user] tries to stab [src] into [user.p_their()] abdomen, but [src] bends and breaks in half! [user.p_they(TRUE)] look[user.p_s()] as if [user.p_they()] might die from the shame.","[user] tries to slice [user.p_their()] own throat, but the plastic blade has no sharpness, causing [user.p_them()] to lose [user.p_their()] balance, slip over, and break [user.p_their()] neck with a loud snap!")
 	user.visible_message("<span class='suicide'>[dmsg] It looks like [user.p_theyre()] trying to commit suicide.</span>")
 	return BRUTELOSS
 
@@ -400,7 +400,7 @@
 
 /obj/item/toy/therapy/attack_self(mob/user)
 	if(cooldown < world.time - 8)
-		to_chat(user, "<span class='notice'>You relieve some stress with \the [src].</span>")
+		to_chat(user, "<span class='notice'>You relieve some stress with [src].</span>")
 		playsound(user, 'sound/items/squeaktoy.ogg', 20, 1)
 		cooldown = world.time
 
@@ -1002,8 +1002,8 @@
 /obj/item/toy/codex_gigas/attack_self(mob/user)
 	if(!cooldown)
 		user.visible_message(
-			"<span class='notice'>[user] presses the button on \the [src].</span>",
-			"<span class='notice'>You press the button on \the [src].</span>",
+			"<span class='notice'>[user] presses the button on [src].</span>",
+			"<span class='notice'>You press the button on [src].</span>",
 			"<span class='notice'>You hear a soft click.</span>")
 		playsound(loc, 'sound/machines/click.ogg', 20, TRUE)
 		cooldown = TRUE
@@ -1083,29 +1083,29 @@
 /obj/item/toy/minigibber/attack_self(mob/user)
 
 	if(stored_minature)
-		to_chat(user, "<span class='danger'>\The [src] makes a violent grinding noise as it tears apart the miniature figure inside!</span>")
+		to_chat(user, "<span class='danger'>[src] makes a violent grinding noise as it tears apart the miniature figure inside!</span>")
 		QDEL_NULL(stored_minature)
 		playsound(user, 'sound/goonstation/effects/gib.ogg', 20, 1)
 		cooldown = world.time
 
 	if(cooldown < world.time - 8)
-		to_chat(user, "<span class='notice'>You hit the gib button on \the [src].</span>")
+		to_chat(user, "<span class='notice'>You hit the gib button on [src].</span>")
 		playsound(user, 'sound/goonstation/effects/gib.ogg', 20, 1)
 		cooldown = world.time
 
 /obj/item/toy/minigibber/attackby(obj/O, mob/user, params)
 	if(istype(O,/obj/item/toy/character) && O.loc == user)
-		to_chat(user, "<span class='notice'>You start feeding \the [O] [bicon(O)] into \the [src]'s mini-input.</span>")
+		to_chat(user, "<span class='notice'>You start feeding [O] [bicon(O)] into [src]'s mini-input.</span>")
 		if(do_after(user, 10, target = src))
 			if(O.loc != user)
-				to_chat(user, "<span class='alert'>\The [O] is too far away to feed into \the [src]!</span>")
+				to_chat(user, "<span class='alert'>[O] is too far away to feed into [src]!</span>")
 			else
-				to_chat(user, "<span class='notice'>You feed \the [O] [bicon(O)] into \the [src]!</span>")
+				to_chat(user, "<span class='notice'>You feed [O] [bicon(O)] into [src]!</span>")
 				user.unEquip(O)
 				O.forceMove(src)
 				stored_minature = O
 		else
-			to_chat(user, "<span class='warning'>You stop feeding \the [O] into \the [src]'s mini-input.</span>")
+			to_chat(user, "<span class='warning'>You stop feeding [O] into [src]'s mini-input.</span>")
 	else ..()
 
 /obj/item/toy/russian_revolver

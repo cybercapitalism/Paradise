@@ -94,8 +94,8 @@
 			..()
 		if(CLAMPED_OFF)
 			user.visible_message( \
-				"[user] activates \the [src]!", \
-				"<span class='notice'>You activate \the [src].</span>",
+				"[user] activates [src]!", \
+				"<span class='notice'>You activate [src].</span>",
 				"<span class='italics'>You hear a click.</span>")
 			message_admins("Power sink activated by [ADMIN_LOOKUPFLW(user)] at [ADMIN_VERBOSEJMP(src)]")
 			log_game("Power sink activated by [key_name(user)] at [AREACOORD(src)]")
@@ -103,8 +103,8 @@
 
 		if(OPERATING)
 			user.visible_message( \
-				"[user] deactivates \the [src]!", \
-				"<span class='notice'>You deactivate \the [src].</span>",
+				"[user] deactivates [src]!", \
+				"<span class='notice'>You deactivate [src].</span>",
 				"<span class='italics'>You hear a click.</span>")
 			set_mode(CLAMPED_OFF)
 

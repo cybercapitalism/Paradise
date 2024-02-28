@@ -699,13 +699,13 @@
 				if(U.accessories.len)
 					var/obj/item/clothing/accessory/A = U.accessories[1]
 					if(!thief_mode)
-						usr.visible_message("<span class='danger'>\The [usr] starts to take off \the [A] from \the [src]'s [U]!</span>", \
-											"<span class='danger'>You start to take off \the [A] from \the [src]'s [U]!</span>")
+						usr.visible_message("<span class='danger'>[usr] starts to take off [A] from [src]'s [U]!</span>", \
+											"<span class='danger'>You start to take off [A] from [src]'s [U]!</span>")
 
 					if(do_mob(usr, src, 40) && A && U.accessories.len)
 						if(!thief_mode)
-							usr.visible_message("<span class='danger'>\The [usr] takes \the [A] off of \the [src]'s [U]!</span>", \
-												"<span class='danger'>You take \the [A] off of \the [src]'s [U]!</span>")
+							usr.visible_message("<span class='danger'>[usr] takes [A] off of [src]'s [U]!</span>", \
+												"<span class='danger'>You take [A] off of [src]'s [U]!</span>")
 						U.detach_accessory(A, usr)
 
 	if(href_list["criminal"])
@@ -1647,7 +1647,7 @@ Eyes need to have significantly high darksight to shine unless the mob has the X
 		for(var/obj/item/hand in handlist)
 			if(prob(current_size * 5) && hand.w_class >= ((11-current_size)/2)	&& unEquip(hand))
 				step_towards(hand, src)
-				to_chat(src, "<span class='warning'>\The [S] pulls \the [hand] from your grip!</span>")
+				to_chat(src, "<span class='warning'>[S] pulls [hand] from your grip!</span>")
 	rad_act(current_size * 3)
 
 /mob/living/carbon/human/narsie_act()
@@ -1863,21 +1863,21 @@ Eyes need to have significantly high darksight to shine unless the mob has the X
 
 /mob/living/carbon/human/selfFeed(obj/item/food/toEat, fullness)
 	if(!check_has_mouth())
-		to_chat(src, "Where do you intend to put \the [toEat]? You don't have a mouth!")
+		to_chat(src, "Where do you intend to put [toEat]? You don't have a mouth!")
 		return 0
 	return ..()
 
 /mob/living/carbon/human/forceFed(obj/item/food/toEat, mob/user, fullness)
 	if(!check_has_mouth())
 		if(!((istype(toEat, /obj/item/reagent_containers/drinks) && (ismachineperson(src)))))
-			to_chat(user, "Where do you intend to put \the [toEat]? \The [src] doesn't have a mouth!")
+			to_chat(user, "Where do you intend to put [toEat]? [src] doesn't have a mouth!")
 			return 0
 	return ..()
 
 /mob/living/carbon/human/selfDrink(obj/item/reagent_containers/drinks/toDrink)
 	if(!check_has_mouth())
 		if(!ismachineperson(src))
-			to_chat(src, "Where do you intend to put \the [src]? You don't have a mouth!")
+			to_chat(src, "Where do you intend to put [src]? You don't have a mouth!")
 			return 0
 		else
 			to_chat(src, "<span class='notice'>You pour a bit of liquid from [toDrink] into your connection port.</span>")

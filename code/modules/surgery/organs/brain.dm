@@ -39,11 +39,11 @@
 		stack_trace("[src] at [loc] did not contain a dna datum at time of removal.")
 		dna = H.dna.Clone()
 	if(dna.real_name)
-		name = "\the [dna.real_name]'s [initial(name)]"
+		name = "[dna.real_name]'s [initial(name)]"
 		brainmob.name = dna.real_name
 		brainmob.real_name = dna.real_name
 	else
-		name = "\the [H.real_name]'s [initial(name)]"
+		name = "[H.real_name]'s [initial(name)]"
 		brainmob.name = H.real_name
 		brainmob.real_name = H.real_name
 	brainmob.dna = dna.Clone() // Silly baycode, what you do

@@ -86,9 +86,9 @@
 	if(user.client && (target in user.client.screen))
 		to_chat(user, "<span class='notice'>You need to take that [target.name] off before 'cleaning' it.</span>")
 	else
-		user.visible_message("<span class='warning'>[user] begins to smear [src] on \the [target.name].</span>")
+		user.visible_message("<span class='warning'>[user] begins to smear [src] on [target.name].</span>")
 		if(do_after(user, cleanspeed, target = target))
-			to_chat(user, "<span class='notice'>You 'clean' \the [target.name].</span>")
+			to_chat(user, "<span class='notice'>You 'clean' [target.name].</span>")
 			if(issimulatedturf(target))
 				new /obj/effect/decal/cleanable/blood/gibs/cleangibs(target)
 			else if(iscarbon(target))

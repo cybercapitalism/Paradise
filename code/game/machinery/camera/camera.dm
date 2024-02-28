@@ -169,7 +169,7 @@
 			if(N)
 				itemname = PDA.name
 				info = N.note
-		to_chat(U, "You hold \the [itemname] up to the camera ...")
+		to_chat(U, "You hold [itemname] up to the camera ...")
 		U.changeNext_move(CLICK_CD_MELEE)
 		for(var/mob/O in GLOB.player_list)
 			if(isAI(O))
@@ -278,7 +278,7 @@
 			visible_message("<span class='danger'>[user] reactivates [src]!</span>")
 			add_hiddenprint(user)
 		else
-			visible_message("<span class='danger'>\The [src] reactivates!</span>")
+			visible_message("<span class='danger'>[src] reactivates!</span>")
 		playsound(loc, toggle_sound, 100, TRUE)
 	update_icon(UPDATE_ICON_STATE)
 	SEND_SIGNAL(src, COMSIG_CAMERA_ON, user, display_message)
@@ -299,7 +299,7 @@
 			visible_message("<span class='danger'>[user] deactivates [src]!</span>")
 			add_hiddenprint(user)
 		else
-			visible_message("<span class='danger'>\The [src] deactivates!</span>")
+			visible_message("<span class='danger'>[src] deactivates!</span>")
 		playsound(loc, toggle_sound, 100, 1)
 
 	update_icon(UPDATE_ICON_STATE)

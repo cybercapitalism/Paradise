@@ -387,15 +387,15 @@
 	if(!proximity) return
 	if(emp_cur_charges > 0)
 		emp_cur_charges -= 1
-		A.visible_message("<span class='danger'>[user] blinks \the [src] at \the [A].", \
-											"<span class='userdanger'>[user] blinks \the [src] at \the [A].")
+		A.visible_message("<span class='danger'>[user] blinks [src] at [A].", \
+											"<span class='userdanger'>[user] blinks [src] at [A].")
 		if(ismob(A))
 			var/mob/M = A
 			add_attack_logs(user, M, "Hit with EMP-light")
 		to_chat(user, "[src] now has [emp_cur_charges] charge\s.")
 		A.emp_act(1)
 	else
-		to_chat(user, "<span class='warning'>\The [src] needs time to recharge!</span>")
+		to_chat(user, "<span class='warning'>[src] needs time to recharge!</span>")
 	return
 
 /obj/item/flashlight/spotlight //invisible lighting source

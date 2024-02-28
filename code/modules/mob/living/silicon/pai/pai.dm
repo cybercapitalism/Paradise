@@ -295,7 +295,7 @@
 	if(istype(W, /obj/item/stack/nanopaste))
 		var/obj/item/stack/nanopaste/N = W
 		if(stat == DEAD)
-			to_chat(user, "<span class='danger'>\The [src] is beyond help, at this point.</span>")
+			to_chat(user, "<span class='danger'>[src] is beyond help, at this point.</span>")
 		else if(getBruteLoss() || getFireLoss())
 			heal_overall_damage(15, 15)
 			N.use(1)

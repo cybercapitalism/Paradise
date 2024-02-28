@@ -408,7 +408,7 @@
 			return FALSE
 		if(istype(limb,/obj/item/organ/external/head))
 			// Bullshit, but prevents being unable to clone someone.
-			to_chat(user, "<span class='warning'>You try to put \the [limb] in your mouth, but [the_item.p_their()] ears tickle your throat!</span>")
+			to_chat(user, "<span class='warning'>You try to put [limb] in your mouth, but [the_item.p_their()] ears tickle your throat!</span>")
 			revert_cast()
 			return FALSE
 		if(istype(limb,/obj/item/organ/external/chest))
@@ -424,14 +424,14 @@
 			if(!limb || !H)
 				return
 			if(H.loc != oldloc)
-				to_chat(user, "<span class='danger'>\The [limb] moved away from your mouth!</span>")
+				to_chat(user, "<span class='danger'>[limb] moved away from your mouth!</span>")
 				return
 			user.visible_message("<span class='danger'>[user] [pick("chomps","bites")] off [the_item]'s [limb]!</span>")
 			playsound(user.loc, 'sound/items/eatfood.ogg', 50, 0)
 			limb.droplimb(0, DROPLIMB_SHARP)
 			doHeal(user)
 	else
-		user.visible_message("<span class='danger'>[user] eats \the [the_item].</span>")
+		user.visible_message("<span class='danger'>[user] eats [the_item].</span>")
 		playsound(user.loc, 'sound/items/eatfood.ogg', 50, 0)
 		qdel(the_item)
 		doHeal(user)

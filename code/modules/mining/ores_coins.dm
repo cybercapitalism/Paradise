@@ -312,7 +312,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 		else if(triggered_by == 2)
 			log_game("A signal has primed a [name] for detonation at [AREACOORD(bombturf)]). Igniter attacher: [key_name(attacher)].")
 		else
-			user.visible_message("<span class='warning'>[user] strikes \the [src], causing a chain reaction!</span>", "<span class='danger'>You strike \the [src], causing a chain reaction.</span>")
+			user.visible_message("<span class='warning'>[user] strikes [src], causing a chain reaction!</span>", "<span class='danger'>You strike [src], causing a chain reaction.</span>")
 			log_game("[key_name(user)] has primed a [name] for detonation at [AREACOORD(bombturf)])")
 		spawn(det_time)
 		if(primed)

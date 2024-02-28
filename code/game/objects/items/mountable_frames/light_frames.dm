@@ -10,7 +10,7 @@
 	var/fixture_type = "tube"
 
 /obj/item/mounted/frame/light_fixture/do_build(turf/on_wall, mob/user)
-	to_chat(user, "You begin attaching [src] to \the [on_wall].")
+	to_chat(user, "You begin attaching [src] to [on_wall].")
 	playsound(get_turf(src), 'sound/machines/click.ogg', 75, 1)
 	var/constrdir = user.dir
 	var/constrloc = get_turf(user)
@@ -29,8 +29,8 @@
 	newlight.fingerprintshidden = src.fingerprintshidden
 	newlight.fingerprintslast = src.fingerprintslast
 
-	user.visible_message("[user] attaches \the [src] to \the [on_wall].", \
-		"You attach \the [src] to \the [on_wall].")
+	user.visible_message("[user] attaches [src] to [on_wall].", \
+		"You attach [src] to [on_wall].")
 	qdel(src)
 
 /obj/item/mounted/frame/light_fixture/small

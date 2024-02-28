@@ -40,8 +40,8 @@
 		for(var/O in contents)
 			var/atom/movable/A = O
 			A.forceMove(T)
-		user.visible_message("<span class='notice'>[user] pries \the [src] open.</span>", \
-							"<span class='notice'>You pry open \the [src].</span>", \
+		user.visible_message("<span class='notice'>[user] pries [src] open.</span>", \
+							"<span class='notice'>You pry open [src].</span>", \
 							"<span class='notice'>You hear splitting wood.</span>")
 		qdel(src)
 	else if(user.a_intent != INTENT_HARM)

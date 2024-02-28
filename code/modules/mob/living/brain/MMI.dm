@@ -44,7 +44,7 @@
 		if(user.drop_item())
 			B.forceMove(src)
 			if(!syndiemmi)
-				visible_message("<span class='notice'>[user] sticks \a [O] into \the [src].</span>")
+				visible_message("<span class='notice'>[user] sticks \a [O] into [src].</span>")
 			brainmob = B.brainmob
 			B.brainmob = null
 			brainmob.container = src
@@ -139,7 +139,7 @@
 			brain_path = /obj/item/organ/internal/brain
 		held_brain = new brain_path(src) // Slime people will keep their slimy brains this way
 	held_brain.dna = brainmob.dna.Clone()
-	held_brain.name = "\the [brainmob.name]'s [initial(held_brain.name)]"
+	held_brain.name = "[brainmob.name]'s [initial(held_brain.name)]"
 
 	name = "\improper [mmi_item_name]: [brainmob.real_name]"
 	become_occupied("mmi_full")
@@ -152,7 +152,7 @@
 		to_chat(brainmob, "<span class='userdanger'>Your MMI did not contain a brain! We'll make a new one for you, but you'd best report this to the bugtracker!</span>")
 		held_brain = new(dropspot) // Let's not ruin someone's round because of something dumb -- Crazylemon
 		held_brain.dna = brainmob.dna.Clone()
-		held_brain.name = "\the [brainmob.name]'s [initial(held_brain.name)]"
+		held_brain.name = "[brainmob.name]'s [initial(held_brain.name)]"
 
 	brainmob.container = null//Reset brainmob mmi var.
 	brainmob.forceMove(held_brain) //Throw mob into brain.

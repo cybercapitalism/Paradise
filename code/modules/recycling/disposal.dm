@@ -105,7 +105,7 @@
 			return
 		if((S.allow_quick_empty || S.allow_quick_gather) && S.contents.len)
 			S.hide_from(user)
-			user.visible_message("[user] empties \the [S] into \the [src].", "You empty \the [S] into \the [src].")
+			user.visible_message("[user] empties [S] into [src].", "You empty [S] into [src].")
 			for(var/obj/item/O in S.contents)
 				S.remove_from_storage(O, src)
 			S.update_icon() // For content-sensitive icons
@@ -531,11 +531,11 @@
 		if(prob(75) || (istype(mover.throwing.thrower) && HAS_TRAIT(mover.throwing.thrower, TRAIT_BADASS)))
 			I.forceMove(src)
 			for(var/mob/M in viewers(src))
-				M.show_message("\the [I] lands in \the [src].", 3)
+				M.show_message("[I] lands in [src].", 3)
 			update()
 		else
 			for(var/mob/M in viewers(src))
-				M.show_message("\the [I] bounces off of \the [src]'s rim!", 3)
+				M.show_message("[I] bounces off of [src]'s rim!", 3)
 		return 0
 	else
 		return ..(mover, target, height)

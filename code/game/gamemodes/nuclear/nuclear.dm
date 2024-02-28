@@ -194,7 +194,7 @@
 
 	if(the_bomb)
 		synd_mind.store_memory("<B>Syndicate [the_bomb.name] Code</B>: [the_bomb.r_code]")
-		to_chat(synd_mind.current, "The code for \the [the_bomb.name] is: <B>[the_bomb.r_code]</B>")
+		to_chat(synd_mind.current, "The code for [the_bomb.name] is: <B>[the_bomb.r_code]</B>")
 
 /datum/game_mode/proc/prepare_syndicate_leader(datum/mind/synd_mind, obj/machinery/nuclearbomb/syndicate/the_bomb)
 	var/leader_title = pick("Czar", "Boss", "Commander", "Chief", "Kingpin", "Director", "Overlord")
@@ -210,7 +210,7 @@
 
 	if(the_bomb)
 		var/obj/item/paper/P = new
-		P.info = "The code for \the [the_bomb.name] is: <B>[the_bomb.r_code]</B>"
+		P.info = "The code for [the_bomb.name] is: <B>[the_bomb.r_code]</B>"
 		P.name = "nuclear bomb code"
 		var/obj/item/stamp/syndicate/stamp = new
 		P.stamp(stamp)

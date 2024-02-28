@@ -97,15 +97,15 @@
 			if(!anchored && !isinspace())
 				playsound(src.loc, I.usesound, 50, 1)
 				user.visible_message( \
-					"[user] tightens \the [src]'s casters.", \
-					"<span class='notice'> You have tightened \the [src]'s casters.</span>", \
+					"[user] tightens [src]'s casters.", \
+					"<span class='notice'> You have tightened [src]'s casters.</span>", \
 					"You hear ratchet.")
 				anchored = TRUE
 			else if(anchored)
 				playsound(src.loc, I.usesound, 50, 1)
 				user.visible_message( \
-					"[user] loosens \the [src]'s casters.", \
-					"<span class='notice'> You have loosened \the [src]'s casters.</span>", \
+					"[user] loosens [src]'s casters.", \
+					"<span class='notice'> You have loosened [src]'s casters.</span>", \
 					"You hear ratchet.")
 				anchored = FALSE
 		else if(mybag)

@@ -154,7 +154,7 @@
 			else
 				user_unbuckle_mob(buckled_mobs[1], user)
 		else
-			user.visible_message("<span class='notice'>[user] collapses \the [name].</span>", "<span class='notice'>You collapse \the [name].</span>")
+			user.visible_message("<span class='notice'>[user] collapses [name].</span>", "<span class='notice'>You collapse [name].</span>")
 			new folded(get_turf(src))
 			qdel(src)
 	else
@@ -204,7 +204,7 @@
 	if(istype(W, /obj/item/roller_holder))
 		var/obj/item/roller_holder/RH = W
 		if(!RH.held)
-			user.visible_message("<span class='notice'>[user] collects \the [name].</span>", "<span class='notice'>You collect \the [name].</span>")
+			user.visible_message("<span class='notice'>[user] collects [name].</span>", "<span class='notice'>You collect [name].</span>")
 			forceMove(RH)
 			RH.held = src
 
@@ -225,7 +225,7 @@
 			return
 		if(has_buckled_mobs())
 			return 0
-		usr.visible_message("<span class='notice'>[usr] collapses \the [name].</span>", "<span class='notice'>You collapse \the [name].</span>")
+		usr.visible_message("<span class='notice'>[usr] collapses [name].</span>", "<span class='notice'>You collapse [name].</span>")
 		new folded(get_turf(src))
 		qdel(src)
 		return

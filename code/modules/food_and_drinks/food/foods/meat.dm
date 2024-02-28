@@ -406,7 +406,7 @@
 			to_chat(usr, "<span class ='notice'>The egg refuses to take on this color!</span>")
 			return
 
-		to_chat(usr, "<span class ='notice'>You color \the [src] [clr]</span>")
+		to_chat(usr, "<span class ='notice'>You color [src] [clr]</span>")
 		icon_state = "egg-[clr]"
 		item_color = clr
 	else

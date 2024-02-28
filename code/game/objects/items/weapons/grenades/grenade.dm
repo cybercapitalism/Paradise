@@ -59,7 +59,7 @@
 		if(det_time > 1)
 			. += "The timer is set to [det_time/10] second\s."
 		else
-			. += "\The [src] is set for instant detonation."
+			. += "[src] is set for instant detonation."
 
 /obj/item/grenade/attack_self(mob/user as mob)
 	if(!active)

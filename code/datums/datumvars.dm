@@ -945,8 +945,8 @@
 				var/amount = input(usr, "Choose the amount to add.", "Choose the amount.", A.reagents.maximum_volume) as num
 				if(amount)
 					A.reagents.add_reagent(chosen_id, amount)
-					log_admin("[key_name(usr)] has added [amount] units of [chosen_id] to \the [A]")
-					message_admins("<span class='notice'>[key_name(usr)] has added [amount] units of [chosen_id] to \the [A]</span>")
+					log_admin("[key_name(usr)] has added [amount] units of [chosen_id] to [A]")
+					message_admins("<span class='notice'>[key_name(usr)] has added [amount] units of [chosen_id] to [A]</span>")
 
 	else if(href_list["explode"])
 		if(!check_rights(R_DEBUG|R_EVENT))	return
@@ -1013,8 +1013,8 @@
 			if("right")	A.dir = turn(A.dir, -45)
 			if("left")	A.dir = turn(A.dir, 45)
 
-		message_admins("[key_name_admin(usr)] has rotated \the [A]")
-		log_admin("[key_name(usr)] has rotated \the [A]")
+		message_admins("[key_name_admin(usr)] has rotated [A]")
+		log_admin("[key_name(usr)] has rotated [A]")
 		href_list["datumrefresh"] = href_list["rotatedatum"]
 
 	else if(href_list["addlanguage"])

@@ -80,19 +80,19 @@
 			var/mob/living/silicon/ai/announcer = pick(ailist)
 			announcer.say(";Engine delivery detected. Type: [engtype].")	//Let's announce the terrible choice to everyone
 
-		visible_message("<span class='notice'>\The [src] begins to violently vibrate and hiss, then promptly disintegrates!</span>")
+		visible_message("<span class='notice'>[src] begins to violently vibrate and hiss, then promptly disintegrates!</span>")
 		qdel(src)	//Self-destructs to prevent crew from spawning multiple engines.
 	else
-		visible_message("<span class='notice'>\The [src] buzzes! No beacon found or selected!</span>")
+		visible_message("<span class='notice'>[src] buzzes! No beacon found or selected!</span>")
 		isactive = FALSE
 		return
 
 //Deletes objects and mobs from the beacon's turf.
 /obj/item/enginepicker/proc/clearturf(turf/T)
 	for(var/obj/item/I in T)
-		I.visible_message("\The [I] gets crushed to dust!")
+		I.visible_message("[I] gets crushed to dust!")
 		qdel(I)
 
 	for(var/mob/living/M in T)
-		M.visible_message("\The [M] gets obliterated!")
+		M.visible_message("[M] gets obliterated!")
 		M.gib()

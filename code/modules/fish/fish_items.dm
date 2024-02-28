@@ -135,7 +135,7 @@
 
 /obj/item/fish/shark/attackby(obj/item/O, mob/user as mob)
 	if(istype(O, /obj/item/wirecutters))
-		to_chat(user, "You rip out the teeth of \the [src.name]!")
+		to_chat(user, "You rip out the teeth of [src.name]!")
 		new /obj/item/fish/toothless_shark(get_turf(src))
 		new /obj/item/shard/shark_teeth(get_turf(src))
 		qdel(src)
@@ -169,7 +169,7 @@
 
 /obj/item/fish/catfish/attackby(obj/item/O, mob/user as mob)
 	if(is_sharp(O))
-		to_chat(user, "You carefully clean and gut \the [src.name].")
+		to_chat(user, "You carefully clean and gut [src.name].")
 		new /obj/item/food/snacks/catfishmeat(get_turf(src))
 		new /obj/item/food/snacks/catfishmeat(get_turf(src))
 		qdel(src)
@@ -188,7 +188,7 @@
 
 /obj/item/fish/salmon/attackby(obj/item/O, mob/user as mob)
 	if(is_sharp(O))
-		to_chat(user, "You carefully clean and gut \the [src.name].")
+		to_chat(user, "You carefully clean and gut [src.name].")
 		new /obj/item/food/snacks/salmonmeat(get_turf(src))
 		new /obj/item/food/snacks/salmonmeat(get_turf(src))
 		qdel(src)
@@ -204,7 +204,7 @@
 
 /obj/item/fish/babycarp/attackby(obj/item/O, mob/user as mob)
 	if(is_sharp(O))
-		to_chat(user, "You carefully clean and gut \the [src.name].")
+		to_chat(user, "You carefully clean and gut [src.name].")
 		new /obj/item/food/snacks/carpmeat(get_turf(src)) //just one fillet; this is a baby, afterall.
 		qdel(src)
 		return

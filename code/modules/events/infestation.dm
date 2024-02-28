@@ -76,7 +76,7 @@
 			log_debug("Infestation Event didn't provide an area to announce(), something is likely broken.")
 			kill()
 
-	GLOB.minor_announcement.Announce("Bioscans indicate that [vermin_chosen] have been breeding in \the [initial(spawn_area_type.name)]. Clear them out, before this starts to affect productivity.", "Lifesign Alert")
+	GLOB.minor_announcement.Announce("Bioscans indicate that [vermin_chosen] have been breeding in [initial(spawn_area_type.name)]. Clear them out, before this starts to affect productivity.", "Lifesign Alert")
 	spawn_area_type = null
 
 #undef VERM_MICE

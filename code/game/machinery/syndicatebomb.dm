@@ -267,7 +267,7 @@
 				log_game("[key_name(user)] has primed a [name] ([payload]) for detonation at [A.name] [COORD(bombturf)]")
 				investigate_log("[key_name(user)] has has primed a [name] ([payload]) for detonation at [A.name] [COORD(bombturf)]", INVESTIGATE_BOMB)
 				add_attack_logs(user, src, "has primed a [name] ([payload]) for detonation", ATKLOG_FEW)
-				payload.adminlog = "\The [src] that [key_name(user)] had primed detonated!"
+				payload.adminlog = "[src] that [key_name(user)] had primed detonated!"
 
 ///Bomb Subtypes///
 

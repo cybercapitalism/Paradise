@@ -27,7 +27,7 @@
 
 /obj/item/hailer/emag_act(user as mob)
 	if(!emagged)
-		to_chat(user, "<span class='warning'>You overload \the [src]'s voice synthesizer.</span>")
+		to_chat(user, "<span class='warning'>You overload [src]'s voice synthesizer.</span>")
 		emagged = TRUE
 		return TRUE
 

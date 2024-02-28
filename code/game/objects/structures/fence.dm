@@ -33,9 +33,9 @@
 	. = ..()
 	switch(hole_size)
 		if(MEDIUM_HOLE)
-			. += "There is a large hole in \the [src]."
+			. += "There is a large hole in [src]."
 		if(LARGE_HOLE)
-			. += "\The [src] has been completely cut through."
+			. += "[src] has been completely cut through."
 
 /obj/structure/fence/end
 	icon_state = "end"
@@ -201,7 +201,7 @@
 
 /obj/structure/fence/door/proc/toggle(mob/user)
 	open = !open
-	visible_message("<span class='notice'>\The [user] [open ? "opens" : "closes"] \the [src].</span>")
+	visible_message("<span class='notice'>[user] [open ? "opens" : "closes"] [src].</span>")
 	update_door_status()
 	playsound(src, 'sound/machines/door_open.ogg', 100, TRUE)
 

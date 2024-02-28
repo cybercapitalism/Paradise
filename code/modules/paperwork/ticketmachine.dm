@@ -26,7 +26,7 @@
 
 /obj/machinery/ticket_machine/Destroy()
 	for(var/obj/item/ticket_machine_ticket/ticket in tickets)
-		ticket.visible_message("<span class='notice'>\the [ticket] disperses!</span>")
+		ticket.visible_message("<span class='notice'>[ticket] disperses!</span>")
 		qdel(ticket)
 	tickets.Cut()
 	return ..()
@@ -39,7 +39,7 @@
 	current_number = ticket_number
 	emagged = TRUE
 	for(var/obj/item/ticket_machine_ticket/ticket in tickets)
-		ticket.visible_message("<span class='notice'>\the [ticket] disperses!</span>")
+		ticket.visible_message("<span class='notice'>[ticket] disperses!</span>")
 		qdel(ticket)
 	tickets.Cut()
 	update_icon()
@@ -54,7 +54,7 @@
 		return
 	if(current_number && !(emagged) && tickets[current_number])
 		var/obj/item/ticket_machine_ticket/ticket = tickets[current_number]
-		ticket.audible_message("<span class='notice'>\the [tickets[current_number]] disperses!</span>")
+		ticket.audible_message("<span class='notice'>[tickets[current_number]] disperses!</span>")
 		qdel(ticket)
 	if(current_number < ticket_number)
 		current_number ++ //Increment the one we're serving.
@@ -62,7 +62,7 @@
 		atom_say("Now serving ticket #[current_number]!")
 		if(!(emagged) && tickets[current_number])
 			var/obj/item/ticket_machine_ticket/ticket = tickets[current_number]
-			ticket.audible_message("<span class='notice'>\the [tickets[current_number]] vibrates!</span>")
+			ticket.audible_message("<span class='notice'>[tickets[current_number]] vibrates!</span>")
 		update_icon() //Update our icon here rather than when they take a ticket to show the current ticket number being served
 
 /obj/machinery/door_control/ticket_machine_button
@@ -131,7 +131,7 @@
 			ticket_number = 0
 			current_number = 0
 			for(var/obj/item/ticket_machine_ticket/ticket in tickets)
-				ticket.audible_message("<span class='notice'>\the [ticket] disperses!</span>")
+				ticket.audible_message("<span class='notice'>[ticket] disperses!</span>")
 				qdel(ticket)
 			tickets.Cut()
 			max_number = initial(max_number)

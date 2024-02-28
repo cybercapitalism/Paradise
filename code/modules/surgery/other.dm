@@ -89,8 +89,8 @@
 		return SURGERY_BEGINSTEP_SKIP
 
 	user.visible_message(
-		"[user] starts patching the damaged vein in [target]'s [affected.name] with \the [tool].",
-		"You start patching the damaged vein in [target]'s [affected.name] with \the [tool]."
+		"[user] starts patching the damaged vein in [target]'s [affected.name] with [tool].",
+		"You start patching the damaged vein in [target]'s [affected.name] with [tool]."
 	)
 	affected.custom_pain("The pain in your [affected.name] is unbearable!")
 	return ..()
@@ -99,8 +99,8 @@
 /datum/surgery_step/fix_vein/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 	user.visible_message(
-		"<span class='notice'> [user] has patched the damaged vein in [target]'s [affected.name] with \the [tool].</span>",
-		"<span class='notice'> You have patched the damaged vein in [target]'s [affected.name] with \the [tool].</span>"
+		"<span class='notice'> [user] has patched the damaged vein in [target]'s [affected.name] with [tool].</span>",
+		"<span class='notice'> You have patched the damaged vein in [target]'s [affected.name] with [tool].</span>"
 	)
 
 	affected.fix_internal_bleeding()
@@ -189,8 +189,8 @@
 /datum/surgery_step/fix_dead_tissue/begin_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 	user.visible_message(
-		"[user] starts cutting away necrotic tissue in [target]'s [affected.name] with \the [tool].",
-		"You start cutting away necrotic tissue in [target]'s [affected.name] with \the [tool]."
+		"[user] starts cutting away necrotic tissue in [target]'s [affected.name] with [tool].",
+		"You start cutting away necrotic tissue in [target]'s [affected.name] with [tool]."
 	)
 	affected.custom_pain("The pain in [affected.name] is unbearable!")
 	return ..()
@@ -198,8 +198,8 @@
 /datum/surgery_step/fix_dead_tissue/end_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/obj/item/organ/external/affected = target.get_organ(target_zone)
 	user.visible_message(
-		"<span class='notice'> [user] has cut away necrotic tissue in [target]'s [affected.name] with \the [tool].</span>",
-		"<span class='notice'> You have cut away necrotic tissue in [target]'s [affected.name] with \the [tool].</span>"
+		"<span class='notice'> [user] has cut away necrotic tissue in [target]'s [affected.name] with [tool].</span>",
+		"<span class='notice'> You have cut away necrotic tissue in [target]'s [affected.name] with [tool].</span>"
 	)
 	affected.open = ORGAN_ORGANIC_OPEN
 
@@ -238,8 +238,8 @@
 	var/obj/item/reagent_containers/container = tool
 	if(!container.reagents.has_reagent("mitocholide"))
 		user.visible_message(
-			"[user] looks at \the [tool] and ponders.",
-			"You are not sure if \the [tool] contains the mitocholide necessary to treat the necrosis.")
+			"[user] looks at [tool] and ponders.",
+			"You are not sure if [tool] contains the mitocholide necessary to treat the necrosis.")
 		return FALSE
 
 /datum/surgery_step/treat_necrosis/begin_step(mob/living/user, mob/living/carbon/human/target, target_zone, obj/item/tool, datum/surgery/surgery)
@@ -251,8 +251,8 @@
 		return SURGERY_BEGINSTEP_SKIP
 
 	user.visible_message(
-		"[user] starts applying medication to the affected tissue in [target]'s [affected.name] with \the [tool].",
-		"You start applying medication to the affected tissue in [target]'s [affected.name] with \the [tool]."
+		"[user] starts applying medication to the affected tissue in [target]'s [affected.name] with [tool].",
+		"You start applying medication to the affected tissue in [target]'s [affected.name] with [tool]."
 	)
 	affected.custom_pain("Something in your [affected.name] is causing you a lot of pain!")
 	return ..()
@@ -278,7 +278,7 @@
 
 		user.visible_message(
 			"<span class='notice'> [user] applies [trans] units of the solution to affected tissue in [target]'s [affected.name]</span>",
-			"<span class='notice'> You apply [trans] units of the solution to affected tissue in [target]'s [affected.name] with \the [tool].</span>"
+			"<span class='notice'> You apply [trans] units of the solution to affected tissue in [target]'s [affected.name] with [tool].</span>"
 		)
 
 	return SURGERY_STEP_CONTINUE

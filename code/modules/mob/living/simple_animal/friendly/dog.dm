@@ -203,9 +203,9 @@
 		if(nofur)
 			to_chat(user, "<span class='warning'>You can't shave this corgi, it doesn't have a fur coat!</span>")
 			return
-		user.visible_message("<span class='notice'>[user] starts to shave [src] using \the [O].", "<span class='notice'>You start to shave [src] using \the [O]...</span>")
+		user.visible_message("<span class='notice'>[user] starts to shave [src] using [O].", "<span class='notice'>You start to shave [src] using [O]...</span>")
 		if(do_after(user, 50, target = src))
-			user.visible_message("<span class='notice'>[user] shaves [src]'s hair using \the [O].</span>")
+			user.visible_message("<span class='notice'>[user] shaves [src]'s hair using [O].</span>")
 			playsound(loc, O.usesound, 20, TRUE)
 			shaved = TRUE
 			icon_living = "[initial(icon_living)]_shaved"
@@ -231,7 +231,7 @@
 			if("head")
 				if(inventory_head)
 					if(inventory_head.flags & NODROP)
-						to_chat(usr, "<span class='warning'>\The [inventory_head] is stuck too hard to [src] for you to remove!</span>")
+						to_chat(usr, "<span class='warning'>[inventory_head] is stuck too hard to [src] for you to remove!</span>")
 						return
 					usr.put_in_hands(inventory_head)
 					inventory_head = null
@@ -243,7 +243,7 @@
 			if("back")
 				if(inventory_back)
 					if(inventory_back.flags & NODROP)
-						to_chat(usr, "<span class='warning'>\The [inventory_head] is stuck too hard to [src] for you to remove!</span>")
+						to_chat(usr, "<span class='warning'>[inventory_head] is stuck too hard to [src] for you to remove!</span>")
 						return
 					usr.put_in_hands(inventory_back)
 					inventory_back = null
@@ -287,7 +287,7 @@
 						return
 
 					if(!usr.unEquip(item_to_add))
-						to_chat(usr, "<span class='warning'>\The [item_to_add] is stuck to your hand, you cannot put it on [src]'s back!</span>")
+						to_chat(usr, "<span class='warning'>[item_to_add] is stuck to your hand, you cannot put it on [src]'s back!</span>")
 						return
 
 					if(istype(item_to_add, /obj/item/grenade/plastic/c4)) // last thing he ever wears, I guess
@@ -340,7 +340,7 @@
 		return
 
 	if(user && !user.unEquip(item_to_add))
-		to_chat(user, "<span class='warning'>\The [item_to_add] is stuck to your hand, you cannot put it on [src]'s head!</span>")
+		to_chat(user, "<span class='warning'>[item_to_add] is stuck to your hand, you cannot put it on [src]'s head!</span>")
 		return 0
 
 	var/valid = FALSE

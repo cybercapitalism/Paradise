@@ -128,10 +128,10 @@
 	else if(load && ismob(load))  // chance to knock off rider
 		if(prob(1 + I.force * 2))
 			unload(0)
-			user.visible_message("<span class='danger'>[user] knocks [load] off [src] with \the [I]!</span>",
-									"<span class='danger'>You knock [load] off [src] with \the [I]!</span>")
+			user.visible_message("<span class='danger'>[user] knocks [load] off [src] with [I]!</span>",
+									"<span class='danger'>You knock [load] off [src] with [I]!</span>")
 		else
-			to_chat(user, "<span class='warning'>You hit [src] with \the [I] but to no effect!</span>")
+			to_chat(user, "<span class='warning'>You hit [src] with [I] but to no effect!</span>")
 			..()
 	else
 		..()

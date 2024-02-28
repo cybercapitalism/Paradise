@@ -237,7 +237,7 @@
 		return
 
 	if(charging)
-		. += "<span class='notice'>\The [src] contains:</span>"
+		. += "<span class='notice'>[src] contains:</span>"
 		. += "<span class='notice'>- \A [charging].</span>"
 		if(!(stat & (NOPOWER|BROKEN)))
 			var/obj/item/stock_parts/cell/C = charging.get_cell()
@@ -245,7 +245,7 @@
 			if(using_power)
 				. += "<span class='notice'>- Recharging <b>[((C.chargerate * recharge_coeff) / C.maxcharge) * 100]%</b> cell charge per cycle.<span>"
 			if(charging)
-				. += "<span class='notice'>- \The [charging]'s cell is at <b>[C.percent()]%</b>.<span>"
+				. += "<span class='notice'>- [charging]'s cell is at <b>[C.percent()]%</b>.<span>"
 
 // Atlantis: No need for that copy-pasta code, just use var to store icon_states instead.
 /obj/machinery/recharger/wallcharger

@@ -101,7 +101,7 @@
 /obj/machinery/atmospherics/portable/examine(mob/user)
 	. = ..()
 	if(holding_tank)
-		. += "<span class='notice'>\The [src] contains [holding_tank]. Alt-click [src] to remove it.</span>"
+		. += "<span class='notice'>[src] contains [holding_tank]. Alt-click [src] to remove it.</span>"
 
 /obj/machinery/atmospherics/portable/proc/replace_tank(mob/living/user, close_valve, obj/item/tank/new_tank)
 	if(holding_tank)

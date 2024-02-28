@@ -231,7 +231,7 @@
 		copyitem.forceMove(get_turf(src))
 		if(ishuman(usr))
 			usr.put_in_hands(copyitem)
-		to_chat(usr, "<span class='notice'>You take \the [copyitem] out of \the [src].</span>")
+		to_chat(usr, "<span class='notice'>You take [copyitem] out of [src].</span>")
 		copyitem = null
 
 	else if(check_mob())
@@ -246,7 +246,7 @@
 		folder.forceMove(get_turf(src))
 		if(ishuman(usr))
 			usr.put_in_hands(folder)
-		to_chat(usr, "<span class='notice'>You take \the [folder] out of \the [src].</span>")
+		to_chat(usr, "<span class='notice'>You take [folder] out of [src].</span>")
 		folder = null
 
 /**
@@ -320,7 +320,7 @@
 				break
 			toner -= 5
 	else
-		to_chat(usr, "<span class='warning'>\The [copyitem] can't be copied by \the [src], ejecting.</span>")
+		to_chat(usr, "<span class='warning'>[copyitem] can't be copied by [src], ejecting.</span>")
 		copyitem.forceMove(loc) //fuckery detected! get off my photocopier... shitbird!
 
 	copying = FALSE
@@ -329,7 +329,7 @@
 	if(!cancopy())
 		return
 	if(length(saved_documents) >= max_saved_documents)
-		to_chat(usr, "<span class='warning'>\The [copyitem] can't be scanned because the max file limit has been reached. Please delete a file to make room.</span>")
+		to_chat(usr, "<span class='warning'>[copyitem] can't be scanned because the max file limit has been reached. Please delete a file to make room.</span>")
 		return
 	copying = TRUE
 	var/obj/item/O
@@ -343,7 +343,7 @@
 	else if(copymob && copymob.loc == loc)
 		O = copyass(scanning = TRUE)
 	else
-		to_chat(usr, "<span class='warning'>\The [copyitem] can't be scanned by \the [src].</span>")
+		to_chat(usr, "<span class='warning'>[copyitem] can't be scanned by [src].</span>")
 		copying = FALSE
 		return
 	use_power(active_power_consumption)
@@ -482,14 +482,14 @@
 			user.drop_item()
 			copyitem = O
 			O.forceMove(src)
-			to_chat(user, "<span class='notice'>You insert \the [O] into \the [src].</span>")
+			to_chat(user, "<span class='notice'>You insert [O] into [src].</span>")
 			flick(insert_anim, src)
 		else
-			to_chat(user, "<span class='notice'>There is already something in \the [src].</span>")
+			to_chat(user, "<span class='notice'>There is already something in [src].</span>")
 	else if(istype(O, /obj/item/toner))
 		if(toner <= 10) //allow replacing when low toner is affecting the print darkness
 			user.drop_item()
-			to_chat(user, "<span class='notice'>You insert the toner cartridge into \the [src].</span>")
+			to_chat(user, "<span class='notice'>You insert the toner cartridge into [src].</span>")
 			var/obj/item/toner/T = O
 			toner += T.toner_amount
 			qdel(O)
@@ -498,7 +498,7 @@
 	else if(istype(O, /obj/item/folder))
 		if(!folder) //allow replacing when low toner is affecting the print darkness
 			user.drop_item()
-			to_chat(user, "<span class='notice'>You slide the [O] into \the [src].</span>")
+			to_chat(user, "<span class='notice'>You slide the [O] into [src].</span>")
 			folder = O
 			O.forceMove(src)
 		else
