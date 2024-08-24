@@ -472,7 +472,7 @@
 			// Can cause heavy message spam in some situations (e.g. pipenets breaking)
 			// log_debug("get_valid_vent_spawns(), vent has no parent: [vent], qdeled: [QDELETED(vent)], loc: [vent.loc]")
 			continue
-		if(length(vent.parent.other_atmosmch) <= min_network_size)
+		if(length(vent.parent.other_atmos_machines) <= min_network_size)
 			continue
 		. += vent
 

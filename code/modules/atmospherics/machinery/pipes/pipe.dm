@@ -41,7 +41,7 @@
 
 	return ..()
 
-/obj/machinery/atmospherics/pipe/returnPipenet(obj/machinery/atmospherics/A)
+/obj/machinery/atmospherics/pipe/return_pipenet(obj/machinery/atmospherics/A)
 	return parent
 
 /obj/machinery/atmospherics/pipe/examine(mob/user)
@@ -68,7 +68,7 @@
 		parent.build_pipeline(src)
 	..()
 
-/obj/machinery/atmospherics/pipe/setPipenet(datum/pipeline/P)
+/obj/machinery/atmospherics/pipe/set_pipenet(datum/pipeline/P)
 	parent = P
 
 /obj/machinery/atmospherics/pipe/color_cache_name(obj/machinery/atmospherics/node)

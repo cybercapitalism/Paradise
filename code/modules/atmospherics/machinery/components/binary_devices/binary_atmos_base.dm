@@ -37,11 +37,11 @@
 	if(node1)
 		node1.disconnect(src)
 		node1 = null
-		nullifyPipenet(parent1)
+		nullify_pipenet(parent1)
 	if(node2)
 		node2.disconnect(src)
 		node2 = null
-		nullifyPipenet(parent2)
+		nullify_pipenet(parent2)
 	return ..()
 
 /obj/machinery/atmospherics/binary/atmos_init()
@@ -91,18 +91,16 @@
 		node2 = null
 	update_icon()
 
-/obj/machinery/atmospherics/binary/nullifyPipenet(datum/pipeline/P)
-	..()
-	if(!P)
-		return
-	if(P == parent1)
+/obj/machinery/atmospherics/binary/nullify_pipenet(datum/pipeline/reference)
+	if(reference == parent1)
 		parent1.other_airs -= air1
 		parent1 = null
-	else if(P == parent2)
+	else if(reference == parent2)
 		parent2.other_airs -= air2
 		parent2 = null
+	..()
 
-/obj/machinery/atmospherics/binary/returnPipenetAir(datum/pipeline/P)
+/obj/machinery/atmospherics/binary/return_pipenet_air(datum/pipeline/P)
 	if(P == parent1)
 		return air1
 	else if(P == parent2)
@@ -117,13 +115,13 @@
 	else
 		return list(node1, node2)
 
-/obj/machinery/atmospherics/binary/setPipenet(datum/pipeline/P, obj/machinery/atmospherics/A)
+/obj/machinery/atmospherics/binary/set_pipenet(datum/pipeline/P, obj/machinery/atmospherics/A)
 	if(A == node1)
 		parent1 = P
 	else if(A == node2)
 		parent2 = P
 
-/obj/machinery/atmospherics/binary/returnPipenet(obj/machinery/atmospherics/A)
+/obj/machinery/atmospherics/binary/return_pipenet(obj/machinery/atmospherics/A)
 	if(A == node1)
 		return parent1
 	else if(A == node2)
@@ -132,7 +130,7 @@
 /obj/machinery/atmospherics/binary/is_pipenet_split()
 	return TRUE
 
-/obj/machinery/atmospherics/binary/replacePipenet(datum/pipeline/Old, datum/pipeline/New)
+/obj/machinery/atmospherics/binary/replace_pipenet(datum/pipeline/Old, datum/pipeline/New)
 	if(Old == parent1)
 		parent1 = New
 	else if(Old == parent2)

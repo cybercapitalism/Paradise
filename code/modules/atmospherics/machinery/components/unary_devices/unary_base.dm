@@ -19,7 +19,7 @@
 	if(node)
 		node.disconnect(src)
 		node = null
-		nullifyPipenet(parent)
+		nullify_pipenet(parent)
 	return ..()
 
 /obj/machinery/atmospherics/unary/atmos_init()
@@ -42,7 +42,7 @@
 		if(node)
 			node.disconnect(src)
 		node = null
-		nullifyPipenet(parent)
+		nullify_pipenet(parent)
 		atmos_init()
 		if(node)
 			node.atmos_init()
@@ -63,27 +63,25 @@
 		node = null
 	update_icon()
 
-/obj/machinery/atmospherics/unary/nullifyPipenet(datum/pipeline/P)
-	..()
-	if(!P)
-		return
-	if(P == parent)
+/obj/machinery/atmospherics/unary/nullify_pipenet(datum/pipeline/reference)
+	if(reference == parent)
 		parent.other_airs -= air_contents
 		parent = null
+	..()
 
-/obj/machinery/atmospherics/unary/returnPipenetAir()
+/obj/machinery/atmospherics/unary/return_pipenet_air()
 	return air_contents
 
 /obj/machinery/atmospherics/unary/pipeline_expansion()
 	return list(node)
 
-/obj/machinery/atmospherics/unary/setPipenet(datum/pipeline/P)
+/obj/machinery/atmospherics/unary/set_pipenet(datum/pipeline/P)
 	parent = P
 
-/obj/machinery/atmospherics/unary/returnPipenet()
+/obj/machinery/atmospherics/unary/return_pipenet()
 	return parent
 
-/obj/machinery/atmospherics/unary/replacePipenet(datum/pipeline/Old, datum/pipeline/New)
+/obj/machinery/atmospherics/unary/replace_pipenet(datum/pipeline/Old, datum/pipeline/New)
 	if(Old == parent)
 		parent = New
 

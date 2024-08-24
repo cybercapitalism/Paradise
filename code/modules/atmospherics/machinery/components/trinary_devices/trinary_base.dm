@@ -56,15 +56,15 @@
 	if(node1)
 		node1.disconnect(src)
 		node1 = null
-		nullifyPipenet(parent1)
+		nullify_pipenet(parent1)
 	if(node2)
 		node2.disconnect(src)
 		node2 = null
-		nullifyPipenet(parent2)
+		nullify_pipenet(parent2)
 	if(node3)
 		node3.disconnect(src)
 		node3 = null
-		nullifyPipenet(parent3)
+		nullify_pipenet(parent3)
 	return ..()
 
 /obj/machinery/atmospherics/trinary/atmos_init()
@@ -134,21 +134,19 @@
 		node3 = null
 	update_icon()
 
-/obj/machinery/atmospherics/trinary/nullifyPipenet(datum/pipeline/P)
-	..()
-	if(!P)
-		return
-	if(P == parent1)
+/obj/machinery/atmospherics/trinary/nullify_pipenet(datum/pipeline/reference)
+	if(reference == parent1)
 		parent1.other_airs -= air1
 		parent1 = null
-	else if(P == parent2)
+	else if(reference == parent2)
 		parent2.other_airs -= air2
 		parent2 = null
-	else if(P == parent3)
+	else if(reference == parent3)
 		parent3.other_airs -= air3
 		parent3 = null
+	..()
 
-/obj/machinery/atmospherics/trinary/returnPipenetAir(datum/pipeline/P)
+/obj/machinery/atmospherics/trinary/return_pipenet_air(datum/pipeline/P)
 	if(P == parent1)
 		return air1
 	else if(P == parent2)
@@ -166,7 +164,7 @@
 			return list(node3)
 	return list(node1, node2, node3)
 
-/obj/machinery/atmospherics/trinary/setPipenet(datum/pipeline/P, obj/machinery/atmospherics/A)
+/obj/machinery/atmospherics/trinary/set_pipenet(datum/pipeline/P, obj/machinery/atmospherics/A)
 	if(A == node1)
 		parent1 = P
 	else if(A == node2)
@@ -174,7 +172,7 @@
 	else if(A == node3)
 		parent3 = P
 
-/obj/machinery/atmospherics/trinary/returnPipenet(obj/machinery/atmospherics/A)
+/obj/machinery/atmospherics/trinary/return_pipenet(obj/machinery/atmospherics/A)
 	if(A == node1)
 		return parent1
 	else if(A == node2)
@@ -185,7 +183,7 @@
 /obj/machinery/atmospherics/trinary/is_pipenet_split()
 	return FALSE
 
-/obj/machinery/atmospherics/trinary/replacePipenet(datum/pipeline/Old, datum/pipeline/New)
+/obj/machinery/atmospherics/trinary/replace_pipenet(datum/pipeline/Old, datum/pipeline/New)
 	if(Old == parent1)
 		parent1 = New
 	else if(Old == parent2)

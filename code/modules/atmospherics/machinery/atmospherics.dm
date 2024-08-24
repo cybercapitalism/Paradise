@@ -158,7 +158,7 @@ Pipelines + Other Objects -> Pipe network
 	return 0
 
 // Pipenet related functions
-/obj/machinery/atmospherics/proc/returnPipenet()
+/obj/machinery/atmospherics/proc/return_pipenet()
 	return
 
 /**
@@ -168,13 +168,13 @@ Pipelines + Other Objects -> Pipe network
 /obj/machinery/atmospherics/proc/is_pipenet_split()
 	return FALSE
 
-/obj/machinery/atmospherics/proc/returnPipenetAir()
+/obj/machinery/atmospherics/proc/return_pipenet_air()
 	return
 
-/obj/machinery/atmospherics/proc/setPipenet()
+/obj/machinery/atmospherics/proc/set_pipenet()
 	return
 
-/obj/machinery/atmospherics/proc/replacePipenet()
+/obj/machinery/atmospherics/proc/replace_pipenet()
 	return
 
 /obj/machinery/atmospherics/proc/build_network(remove_deferral = FALSE)
@@ -188,9 +188,16 @@ Pipelines + Other Objects -> Pipe network
 /obj/machinery/atmospherics/proc/disconnect(obj/machinery/atmospherics/reference)
 	return
 
-/obj/machinery/atmospherics/proc/nullifyPipenet(datum/pipeline/P)
-	if(P)
-		P.other_atmosmch -= src
+/obj/machinery/atmospherics/proc/nullify_pipenet(datum/pipeline/reference)
+	if(!reference)
+		CRASH("nullify_pipenet(null) called by [type] on [COORD(src)]")
+
+	reference.other_atmos_machines -= src
+
+	if(!length(reference.other_atmos_machines) && !length(reference.members))
+		if(QDESTROYING(reference))
+			CRASH("nullify_pipenet() called on qdeleting [reference]")
+		qdel(reference)
 
 /obj/machinery/atmospherics/wrench_act(mob/living/user, obj/item/wrench/W)
 	var/turf/T = get_turf(src)
@@ -316,7 +323,7 @@ Pipelines + Other Objects -> Pipe network
 	build_network()
 
 // Find a connecting /obj/machinery/atmospherics in specified direction.
-/obj/machinery/atmospherics/proc/findConnecting(direction)
+/obj/machinery/atmospherics/proc/find_connecting(direction)
 	for(var/obj/machinery/atmospherics/target in get_step(src,direction))
 		var/can_connect = check_connect_types(target, src)
 		if(can_connect && (target.initialize_directions & get_dir(target,src)))
@@ -332,7 +339,7 @@ Pipelines + Other Objects -> Pipe network
 	if(user in buckled_mobs)// fixes buckle ventcrawl edgecase fuck bug
 		return
 
-	var/obj/machinery/atmospherics/target_move = findConnecting(direction)
+	var/obj/machinery/atmospherics/target_move = find_connecting(direction)
 	if(target_move)
 		if(is_type_in_list(target_move, GLOB.ventcrawl_machinery) && target_move.can_crawl_through())
 			user.remove_ventcrawl()

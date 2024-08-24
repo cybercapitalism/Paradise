@@ -88,7 +88,7 @@
 	..()
 	if(node) return
 	for(var/cdir in GLOB.cardinal)
-		node = findConnecting(cdir)
+		node = find_connecting(cdir)
 		if(node)
 			break
 

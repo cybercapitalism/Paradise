@@ -103,7 +103,7 @@
 		if(get_dist(src, entry_vent) <= 1)
 			frustration = 0
 			var/list/vents = list()
-			for(var/obj/machinery/atmospherics/unary/vent_pump/temp_vent in entry_vent.parent.other_atmosmch)
+			for(var/obj/machinery/atmospherics/unary/vent_pump/temp_vent in entry_vent.parent.other_atmos_machines)
 				if(temp_vent.welded) // no point considering a vent we can't even use
 					continue
 				vents.Add(temp_vent)

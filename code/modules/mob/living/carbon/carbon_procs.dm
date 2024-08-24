@@ -487,7 +487,7 @@ GLOBAL_LIST_INIT(ventcrawl_machinery, list(/obj/machinery/atmospherics/unary/ven
 		to_chat(src, "<span class='warning'>This ventilation duct is not connected to anything!</span>")
 		return
 
-	if(!vent_found.parent || !(length(vent_found.parent.members) || vent_found.parent.other_atmosmch))
+	if(!vent_found.parent || !(length(vent_found.parent.members) || vent_found.parent.other_atmos_machines))
 		return
 
 	visible_message("<span class='notice'>[src] begins climbing into the ventilation system...</span>", \
@@ -532,12 +532,12 @@ GLOBAL_LIST_INIT(ventcrawl_machinery, list(/obj/machinery/atmospherics/unary/ven
 	add_ventcrawl(vent_found)
 
 /mob/living/proc/add_ventcrawl(obj/machinery/atmospherics/starting_machine, obj/machinery/atmospherics/target_move)
-	if(!istype(starting_machine) || !starting_machine.returnPipenet(target_move) || !starting_machine.can_see_pipes())
+	if(!istype(starting_machine) || !starting_machine.return_pipenet(target_move) || !starting_machine.can_see_pipes())
 		return
-	var/datum/pipeline/pipeline = starting_machine.returnPipenet(target_move)
+	var/datum/pipeline/pipeline = starting_machine.return_pipenet(target_move)
 	var/list/totalMembers = list()
 	totalMembers |= pipeline.members
-	totalMembers |= pipeline.other_atmosmch
+	totalMembers |= pipeline.other_atmos_machines
 	for(var/obj/machinery/atmospherics/A in totalMembers)
 		if(!A.pipe_image)
 			A.update_pipe_image()
