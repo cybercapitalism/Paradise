@@ -75,6 +75,8 @@ You can use the run_loc_bottom_left and run_loc_top_right to get turfs for testi
 		/mob/dview,
 		//Template type
 		/obj/item/organ,
+		//This is meant to fail extremely loud every single time it occurs in any environment in any context, and it falsely alarms when this unit test iterates it. Let's not spawn it in.
+		/obj/merge_conflict_marker,
 		//Both are abstract types meant to scream bloody murder if spawned in raw
 		/obj/item/organ/external,
 	)
@@ -93,6 +95,8 @@ You can use the run_loc_bottom_left and run_loc_top_right to get turfs for testi
 	returnable_list += typesof(/obj/effect/sliding_puzzle)
 	//these can explode and cause the turf to be destroyed at unexpected moments
 	returnable_list += typesof(/obj/effect/mine)
+	//Sparks can ignite a number of things, causing a fire to burn the floor away. Only you can prevent CI fires
+	returnable_list += typesof(/obj/effect/particle_effect/sparks)
 	//Stacks baseturfs, can't be tested here
 	returnable_list += typesof(/obj/effect/temp_visual/lava_warning)
 	//Our system doesn't support it without warning spam from unregister calls on things that never registered

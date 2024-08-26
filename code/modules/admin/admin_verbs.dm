@@ -161,7 +161,7 @@ GLOBAL_LIST_INIT(admin_verbs_debug, list(
 	/client/proc/reestablish_db_connection,
 	/client/proc/ss_breakdown,
 	#ifdef REFERENCE_TRACKING
-	/datum/proc/find_refs,
+	/datum/proc/find_references,
 	/datum/proc/qdel_then_find_references,
 	/datum/proc/qdel_then_if_fail_find_references,
 	#endif
@@ -1179,7 +1179,7 @@ GLOBAL_LIST_INIT(view_runtimes_verbs, list(
 	message_admins("[key_name_admin(usr)] is visualising interesting atmos turfs. Server may lag.")
 
 	var/list/zlevel_turf_indexes = list()
-	
+
 	var/list/coords = get_interesting_atmos_tiles()
 	if(!length(coords))
 		to_chat(mob, "<span class='notice'>There are no interesting turfs. How interesting!</span>")

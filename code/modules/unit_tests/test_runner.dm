@@ -55,26 +55,29 @@
 
 /datum/test_runner/proc/Run()
 	CHECK_TICK
+	var/list/tests_to_run = subtypesof(/datum/unit_test)
 
-	for(var/I in subtypesof(/datum/unit_test))
-		var/datum/unit_test/test = new I
-		test_logs[I] = list()
+	sortTim(tests_to_run, GLOBAL_PROC_REF(cmp_unit_test_priority))
+
+	for(var/unit_path in tests_to_run)
+		CHECK_TICK // We check tick first because the unit test we run last may be so expensive that checking tick will lock up this loop forever
+		var/datum/unit_test/test = new unit_path
+		test_logs[unit_path] = list()
 
 		current_test = test
 		var/duration = REALTIMEOFDAY
 
 		test.Run()
 
-		durations[I] = REALTIMEOFDAY - duration
+		durations[unit_path] = REALTIMEOFDAY - duration
 		current_test = null
 
 		if(!test.succeeded)
 			failed_any_test = TRUE
-			test_logs[I] += test.fail_reasons
+			test_logs[unit_path] += test.fail_reasons
 
 		qdel(test)
 
-		CHECK_TICK
 
 	SSticker.reboot_helper("Unit Test Reboot", "tests ended", 0)
 
