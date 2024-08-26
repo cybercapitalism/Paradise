@@ -26,15 +26,29 @@
 
 /***** All toggles for the GC ref finder *****/
 
-#define REFERENCE_TRACKING		// Uncomment to enable ref finding
+///Used to find the sources of harddels, quite laggy, don't be surprised if it freezes your client for a good while
+//#define REFERENCE_TRACKING
+#ifdef REFERENCE_TRACKING
 
-// #define GC_FAILURE_HARD_LOOKUP	//makes paths that fail to GC call find_references before del'ing.
+///Used for doing dry runs of the reference finder, to test for feature completeness
+///Slightly slower, higher in memory. Just not optimal
+//#define REFERENCE_TRACKING_DEBUG
 
-#define FIND_REF_NO_CHECK_TICK	//Sets world.loop_checks to false and prevents find references from sleeping
+//#define REFERENCE_TRACKING_FAST
+
+///Run a lookup on things hard deleting by default.
+//#define GC_FAILURE_HARD_LOOKUP
+#ifdef GC_FAILURE_HARD_LOOKUP
+///Don't stop when searching, go till you're totally done
+#define FIND_REF_NO_CHECK_TICK
+#endif //ifdef GC_FAILURE_HARD_LOOKUP
 
 // #define FIND_REF_NOTIFY_ON_COMPLETE	// Throw a windows notification toast when the ref finding process is done
+#endif //ifdef REFERENCE_TRACKING
+
 
 /***** End toggles for the GC ref finder *****/
+
 
 #define IS_MODE_COMPILED(MODE) (ispath(text2path("/datum/game_mode/"+(MODE))))
 

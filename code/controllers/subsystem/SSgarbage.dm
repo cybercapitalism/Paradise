@@ -457,6 +457,7 @@ SUBSYSTEM_DEF(garbage)
 	if(src.references_to_clear == 0)
 		return
 
+	// ===CHUGAFIX=== live ref tracking todo lol
 	//Warning, attempting to search clients like this will cause crashes if done on live. Watch yourself
 #ifndef REFERENCE_DOING_IT_LIVE
 	for(var/client/thing) //clients
