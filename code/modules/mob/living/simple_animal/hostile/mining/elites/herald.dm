@@ -131,8 +131,6 @@
 		H.preparePixelProjectile(marker, startloc)
 		H.firer = src
 		H.firer_source_atom = src
-		if(target)
-			H.original = target
 		H.fire(set_angle)
 		if(is_trishot)
 			shoot_projectile(marker, set_angle + 15, FALSE, FALSE)
@@ -142,8 +140,6 @@
 		H.preparePixelProjectile(marker, startloc)
 		H.firer = src
 		H.firer_source_atom = src
-		if(target)
-			H.original = target
 		H.fire(set_angle)
 
 /mob/living/simple_animal/hostile/asteroid/elite/herald/proc/herald_trishot(target)

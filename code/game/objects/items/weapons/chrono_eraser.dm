@@ -127,11 +127,13 @@
 	var/obj/item/gun/energy/chrono_gun/gun = null
 
 /obj/item/projectile/energy/chrono_beam/fire()
-	gun = firer.get_active_hand()
+	// this is all sinful
+	var/mob/mob_firer = firer
+	if(!istype(mob_firer))
+		return FALSE
+	gun = mob_firer.get_active_hand()
 	if(istype(gun))
 		return ..()
-	else
-		return 0
 
 /obj/item/projectile/energy/chrono_beam/on_hit(atom/target)
 	if(target && gun && isliving(target))

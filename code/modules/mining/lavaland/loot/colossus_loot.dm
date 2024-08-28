@@ -62,14 +62,15 @@
 
 /obj/machinery/anomalous_crystal/proc/ActivationReaction(mob/user, method, damtype)
 	if(world.time < last_use_timer)
-		return 0
+		return FALSE
 	if(activation_damage_type && activation_damage_type != damtype)
-		return 0
+		return FALSE
 	if(method != activation_method)
-		return 0
+		return FALSE
 	last_use_timer = (world.time + cooldown_add)
-	playsound(user, activation_sound, 100, 1)
-	return 1
+	if(istype(user))
+		playsound(user, activation_sound, 100, 1)
+	return TRUE
 
 /obj/machinery/anomalous_crystal/Bumped(atom/AM as mob|obj)
 	..()

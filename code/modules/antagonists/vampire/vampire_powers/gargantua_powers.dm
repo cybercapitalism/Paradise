@@ -163,20 +163,23 @@
 	var/mob/living/L = target
 	L.Immobilize(1 SECONDS)
 	var/throw_target
-	if(!firer)
+
+	if(!ismob(firer))
 		return
 
-	if(!L.affects_vampire(firer))
+	var/mob/mob_firer = firer
+
+	if(!L.affects_vampire(mob_firer))
 		return
 
 	new /obj/effect/temp_visual/demonic_grasp(loc)
 
-	switch(firer.a_intent)
+	switch(mob_firer.a_intent)
 		if(INTENT_DISARM)
-			throw_target = get_edge_target_turf(L, get_dir(firer, L))
+			throw_target = get_edge_target_turf(L, get_dir(mob_firer, L))
 			L.throw_at(throw_target, 2, 5, spin = FALSE, callback = CALLBACK(src, PROC_REF(create_snare), L)) // shove away
 		if(INTENT_GRAB)
-			throw_target = get_step(firer, get_dir(firer, L))
+			throw_target = get_step(mob_firer, get_dir(mob_firer, L))
 			L.throw_at(throw_target, 2, 5, spin = FALSE, diagonals_first = TRUE, callback = CALLBACK(src, PROC_REF(create_snare), L)) // pull towards
 
 /obj/item/projectile/magic/demonic_grasp/proc/create_snare(mob/target)
