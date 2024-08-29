@@ -56,15 +56,15 @@
 	if(node1)
 		node1.disconnect(src)
 		node1 = null
-		nullify_pipenet(parent1)
 	if(node2)
 		node2.disconnect(src)
 		node2 = null
-		nullify_pipenet(parent2)
 	if(node3)
 		node3.disconnect(src)
 		node3 = null
-		nullify_pipenet(parent3)
+	nullify_pipenet(parent1)
+	nullify_pipenet(parent2)
+	nullify_pipenet(parent3)
 	return ..()
 
 /obj/machinery/atmospherics/trinary/atmos_init()

@@ -34,14 +34,16 @@
 	air2.volume = 200
 
 /obj/machinery/atmospherics/binary/Destroy()
+	// node1, node2, parent1, parent2
+	log_gc("Destroying: [type] ([text_ref(src)]). Refs: [text_ref(node1)] | [text_ref(node2)] | [text_ref(parent1)] | [text_ref(parent2)]")
 	if(node1)
 		node1.disconnect(src)
 		node1 = null
-		nullify_pipenet(parent1)
 	if(node2)
 		node2.disconnect(src)
 		node2 = null
-		nullify_pipenet(parent2)
+	nullify_pipenet(parent1)
+	nullify_pipenet(parent2)
 	return ..()
 
 /obj/machinery/atmospherics/binary/atmos_init()

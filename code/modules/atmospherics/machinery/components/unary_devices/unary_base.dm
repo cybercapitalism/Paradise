@@ -19,7 +19,7 @@
 	if(node)
 		node.disconnect(src)
 		node = null
-		nullify_pipenet(parent)
+	nullify_pipenet(parent)
 	return ..()
 
 /obj/machinery/atmospherics/unary/atmos_init()
@@ -46,7 +46,7 @@
 		atmos_init()
 		if(node)
 			node.atmos_init()
-			node.addMember(src)
+			node.add_member(src)
 		build_network()
 		. = 1
 

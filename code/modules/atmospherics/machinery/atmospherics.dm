@@ -191,9 +191,8 @@ Pipelines + Other Objects -> Pipe network
 /obj/machinery/atmospherics/proc/nullify_pipenet(datum/pipeline/reference)
 	if(!reference)
 		CRASH("nullify_pipenet(null) called by [type] on [COORD(src)]")
-
 	reference.other_atmos_machines -= src
-
+	log_gc("[type]([text_ref(src)]) nullified other_atmos_machines in [text_ref(reference)]")
 	if(!length(reference.other_atmos_machines) && !length(reference.members))
 		if(QDESTROYING(reference))
 			CRASH("nullify_pipenet() called on qdeleting [reference]")
@@ -319,7 +318,7 @@ Pipelines + Other Objects -> Pipe network
 	var/list/nodes = pipeline_expansion()
 	for(var/obj/machinery/atmospherics/A in nodes)
 		A.atmos_init()
-		A.addMember(src)
+		A.add_member(src)
 	build_network()
 
 // Find a connecting /obj/machinery/atmospherics in specified direction.

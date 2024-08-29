@@ -98,7 +98,7 @@
 	var/datum/gas_mixture/G = A.return_pipenet_air(src)
 	other_airs |= G
 
-/datum/pipeline/proc/addMember(obj/machinery/atmospherics/device_ref, obj/machinery/atmospherics/device_to_add)
+/datum/pipeline/proc/add_member(obj/machinery/atmospherics/device_ref, obj/machinery/atmospherics/device_to_add)
 	//update = TRUE // LOL
 	if(!istype(device_ref, /obj/machinery/atmospherics/pipe))
 		device_ref.set_pipenet(src, device_to_add)
@@ -147,12 +147,14 @@
 	update = TRUE // lol
 	qdel(parent_pipeline)
 
-/obj/machinery/atmospherics/proc/addMember(obj/machinery/atmospherics/considered_device)
+/obj/machinery/atmospherics/proc/add_member(obj/machinery/atmospherics/considered_device)
 	var/datum/pipeline/device_pipeline = return_pipenet(considered_device)
-	device_pipeline.addMember(considered_device, src)
+	if(!device_pipeline)
+		CRASH("null.add_member() called by [type] on [COORD(src)]")
+	device_pipeline.add_member(considered_device, src)
 
-/obj/machinery/atmospherics/pipe/addMember(obj/machinery/atmospherics/considered_device)
-	parent.addMember(considered_device, src)
+/obj/machinery/atmospherics/pipe/add_member(obj/machinery/atmospherics/considered_device)
+	parent.add_member(considered_device, src)
 
 /datum/pipeline/proc/temperature_interact(turf/target, share_volume, thermal_conductivity)
 	var/datum/milla_safe/pipeline_temperature_interact/milla = new()
